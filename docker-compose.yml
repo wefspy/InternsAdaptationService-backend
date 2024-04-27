@@ -11,3 +11,17 @@ services:
       - "5000:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+  internsadaptationservice.db:
+    container_name: InternsAdaptationService.db
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 7rVo}f)7JocU]2>ms)CztJYs=%v>WU2PF#gH2669*,K_kJ2m9Y
+      POSTGRES_DB: db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes: 
+  postgres-data:

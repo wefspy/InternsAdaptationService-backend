@@ -1,8 +1,16 @@
+using InternsAdaptationService.Infrastructure.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
+var postgresDbConnection = configuration.GetConnectionString("PostgresDbConnection")!;
 
-// Add services to the container.
 
+// Add Controllers.
 builder.Services.AddControllers();
+
+// Add Context
+builder.Services.AddDbContext(postgresDbConnection);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
