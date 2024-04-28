@@ -8,5 +8,5 @@ public class PatternPlan: BaseModel
 
     public required string Title { get; set; }
 
-    public virtual Mentor Mentor { get; set; }
+    public virtual User Mentor { get; set; }
 }

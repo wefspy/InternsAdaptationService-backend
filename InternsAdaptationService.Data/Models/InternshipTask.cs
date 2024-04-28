@@ -5,7 +5,7 @@ namespace InternsAdaptationService.Data.Models;
 
 public class InternshipTask: BaseModel
 {
-    public required Guid PlanID { get; set; }
+    public required Guid InternID { get; set; }
 
     public required string Title { get; set; }
 
@@ -17,10 +17,12 @@ public class InternshipTask: BaseModel
 
     public required DateTime CompletionDate { get; set; }
 
+    public required Guid Author { get; set; }
+
     public string? MentorReview { get; set; }
 
-    public required Status Status { get; set; }
+    public required StatusEnum Status { get; set; }
 
-    public virtual InternshipPlan InternshipPlan { get; set; }
+    public virtual User Intern { get; set; }
 
 }

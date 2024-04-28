@@ -10,5 +10,5 @@ public class PatternTask: BaseModel
 
     public required string Description { get; set; }
 
-    public virtual required Mentor Mentor { get; set; }
+    public virtual required User Mentor { get; set; }
 }

@@ -1,6 +1,6 @@
 ﻿namespace InternsAdaptationService.Data.Enums;
 
-public enum Status
+public enum StatusEnum
 {
     Scheduled,
     Perform,
