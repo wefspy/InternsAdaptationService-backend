@@ -6,11 +6,13 @@ namespace InternsAdaptationService.Infrastructure.DependencyInjection;
 
 public static class DbContextProvider
 {
-    public static void AddDbContext(this IServiceCollection services, string connectionString)
+    public static IServiceCollection InjectDbContext(this IServiceCollection services, string connectionString)
     {
         services.AddDbContext<InternsAdaptationServiceDbContext>(options =>
         {
             options.UseNpgsql(connectionString);
         });
+
+        return services;
     }
 }
