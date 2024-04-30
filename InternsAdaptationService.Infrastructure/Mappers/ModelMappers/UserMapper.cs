@@ -1,20 +1,21 @@
 ﻿using InternsAdaptationService.Data.Enums;
-using InternsAdaptationService.Data.Models;
+using InternsAdaptationService.Data.Entities;
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers;
 
 namespace InternsAdaptationService.Infrastructure.Mappers;
 
-public static class UserMapper
+public class UserMapper: IUserMapper
 {
-    public static AuthDataResponseModel ToAuthDataResponseModel(User user, string role)
+    public AuthDataResponseModel ToAuthDataResponseModel(UserEntity user, string role)
     {
         return new AuthDataResponseModel(user.Id, role, user.Name, user.Surname, user.MiddleName, user.DesciptionProfile, user.Telegram, user.VK);
     }
 
-    public static User ToUserModel(RegistrationRequestModel requestModel)
+    public UserEntity ToUserEntity(RegistrationRequestModel requestModel)
     {
-        return new User
+        return new UserEntity
         {
             Id = Guid.NewGuid(),
             UserName = requestModel.Email,

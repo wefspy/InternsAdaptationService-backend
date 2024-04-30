@@ -1,5 +1,5 @@
 ﻿using InternsAdaptationService.Data.Context;
-using InternsAdaptationService.Data.Models;
+using InternsAdaptationService.Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,7 +12,7 @@ public static class AuthOptionsProvider
         services.AddAuthentication().AddBearerToken();
         services.AddAuthorization();
 
-        services.AddIdentity<User, Role>(options =>
+        services.AddIdentity<UserEntity, RoleEntity>(options =>
         {
             options.Password.RequiredLength = 8;
             options.Password.RequireNonAlphanumeric = false;

@@ -1,11 +1,11 @@
 ﻿using InternsAdaptationService.Data.Enums;
-using InternsAdaptationService.Data.Models.Parents;
+using InternsAdaptationService.Data.Entities.ParentEntities;
 
-namespace InternsAdaptationService.Data.Models;
+namespace InternsAdaptationService.Data.Entities;
 
-public class InternshipTask: BaseModel
+public class InternshipTaskEntity: BaseEntity
 {
-    public required Guid InternID { get; set; }
+    public required Guid InternId { get; set; }
 
     public required string Title { get; set; }
 
@@ -23,6 +23,6 @@ public class InternshipTask: BaseModel
 
     public required StatusEnum Status { get; set; }
 
-    public virtual User Intern { get; set; }
+    public virtual UserEntity Intern { get; set; }
 
 }

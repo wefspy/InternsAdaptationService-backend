@@ -1,22 +1,22 @@
 ﻿using InternsAdaptationService.Data.Enums;
-using InternsAdaptationService.Data.Models;
+using InternsAdaptationService.Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace InternsAdaptationService.Data.Context;
 
-public class InternsAdaptationServiceDbContext: IdentityDbContext<User, Role, Guid>
+public class InternsAdaptationServiceDbContext: IdentityDbContext<UserEntity, RoleEntity, Guid>
 {
-    public DbSet<Role> Roles { get; set; }
-    public DbSet<User> Users { get; set; }
-    public DbSet<PatternPlan> PatternPlans { get; set; }
-    public DbSet<PatternTask> PatternTasks { get; set; }
-    public DbSet<PatternPlanTask> PatternPlanTasks { get; set; }
-    public DbSet<PatternSubtask> PatternSubtasks { get; set; }
-    public DbSet<MentorIntern> MentorInterns { get; set; }
-    public DbSet<InternshipTask> InternshipTasks { get; set; }
-    public DbSet<InternshipSubtask> InternshipSubtasks { get; set; }
+    public DbSet<RoleEntity> Roles { get; set; }
+    public DbSet<UserEntity> Users { get; set; }
+    public DbSet<PatternPlanEntity> PatternPlans { get; set; }
+    public DbSet<PatternTaskEntity> PatternTasks { get; set; }
+    public DbSet<PatternPlanTaskEntity> PatternPlanTasks { get; set; }
+    public DbSet<PatternSubtaskEntity> PatternSubtasks { get; set; }
+    public DbSet<MentorInternEntity> MentorInterns { get; set; }
+    public DbSet<InternshipTaskEntity> InternshipTasks { get; set; }
+    public DbSet<InternshipSubtaskEntity> InternshipSubtasks { get; set; }
 
 
 

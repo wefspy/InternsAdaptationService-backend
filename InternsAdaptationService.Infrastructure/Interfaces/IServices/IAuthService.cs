@@ -1,12 +1,12 @@
-﻿using InternsAdaptationService.Data.Models;
+﻿using InternsAdaptationService.Data.Entities;
 
 namespace InternsAdaptationService.Infrastructure.Interfaces.IServices;
 
 public interface IAuthService
 {
-    public Task RegisterWithEmailAndPasswordAsync(User user, string role, string password);
+    public Task<(UserEntity userEntity, string userRole)> RegisterWithEmailAndPasswordAsync(UserEntity user, string role, string password);
 
-    public Task<(User, string)> SigninWithEmailAndPasswordAsync(string email, string password);
+    public Task<(UserEntity userEntity, string userRole)> SigninWithEmailAndPasswordAsync(string email, string password);
 
     public Task SignOutAsync();
 }

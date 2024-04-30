@@ -1,4 +1,4 @@
-﻿using InternsAdaptationService.Data.Models;
+﻿using InternsAdaptationService.Data.Entities;
 using InternsAdaptationService.Infrastructure.Interfaces.IHandlers;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices;
 using Microsoft.AspNetCore.Identity;
@@ -7,12 +7,12 @@ namespace InternsAdaptationService.Infrastructure.Services;
 
 public class AuthService : IAuthService
 {
-    private readonly UserManager<User> _userManager;
-    private readonly SignInManager<User> _signinManager;
-    private readonly RoleManager<Role> _roleManager;
+    private readonly UserManager<UserEntity> _userManager;
+    private readonly SignInManager<UserEntity> _signinManager;
+    private readonly RoleManager<RoleEntity> _roleManager;
     private readonly IErrorHandler _errorHandler;
 
-    public AuthService(UserManager<User> userManager, SignInManager<User> signinManager, RoleManager<Role> roleManager, IErrorHandler errorHandler)
+    public AuthService(UserManager<UserEntity> userManager, SignInManager<UserEntity> signinManager, RoleManager<RoleEntity> roleManager, IErrorHandler errorHandler)
     {
         _userManager = userManager;
         _signinManager = signinManager;
@@ -20,34 +20,38 @@ public class AuthService : IAuthService
         _errorHandler = errorHandler;
     }
 
-    public async Task RegisterWithEmailAndPasswordAsync(User user, string password, string role)
+    public async Task<(UserEntity userEntity, string userRole)> RegisterWithEmailAndPasswordAsync(UserEntity user, string password, string role)
     {
         var createUser = await _userManager.CreateAsync(user, password);
         if (!createUser.Succeeded)
             throw new Exception(_errorHandler.IdentityExceptionsToString(createUser.Errors));
 
-        await _roleManager.CreateAsync(new Role() { Name = role });
+        var createRole = await _roleManager.CreateAsync(new RoleEntity() { Name = role });
+        if (!createRole.Succeeded)
+            throw new Exception(_errorHandler.IdentityExceptionsToString(createRole.Errors));
 
         var addRole = await _userManager.AddToRoleAsync(user, role);
         if (!addRole.Succeeded)
             throw new Exception(_errorHandler.IdentityExceptionsToString(addRole.Errors));
 
-        var signinUser = await _signinManager.PasswordSignInAsync(user, password, true, true);
-        if (!signinUser.Succeeded)
-            throw new Exception("User created but unable signin");
+        return await SigninWithEmailAndPasswordAsync(user.Email!, password);
     }
 
-    public async Task<(User, string)> SigninWithEmailAndPasswordAsync(string email, string password)
+    public async Task<(UserEntity userEntity, string userRole)> SigninWithEmailAndPasswordAsync(string email, string password)
     {
+        var user = await _userManager.FindByEmailAsync(email);
+        if (user == null)
+            throw new Exception("User not created");
+
+        var role = (await _userManager.GetRolesAsync(user!)).First();
+        if (role == null)
+            throw new Exception("User is not assigned a role");
+
         var signinUser = await _signinManager.PasswordSignInAsync(email, password, true, true);
         if (!signinUser.Succeeded)
             throw new Exception("Invalid login or password");
 
-        var user = await _userManager.FindByNameAsync(email);
-        
-        var role = (await _userManager.GetRolesAsync(user!)).First();
-
-        return (user!, role);
+        return (user, role);
     }
 
     public async Task SignOutAsync()

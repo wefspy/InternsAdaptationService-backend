@@ -1,21 +1,21 @@
-﻿using InternsAdaptationService.Data.Enums;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
+﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices;
-using InternsAdaptationService.Infrastructure.Mappers;
 
 namespace InternsAdaptationService.Infrastructure.Managers;
 
 public class AuthManager : IAuthManager
 {
     private readonly IAuthService _authService;
+    private readonly IUserMapper _userMapper;
     private readonly IRoleEnumMapper _roleEnumMapper;
-
-    public AuthManager(IAuthService authService, IRoleEnumMapper roleEnumMapper) 
+    
+    public AuthManager(IAuthService authService, IUserMapper userMapper, IRoleEnumMapper roleEnumMapper) 
     { 
         _authService = authService; 
+        _userMapper = userMapper;
         _roleEnumMapper = roleEnumMapper;
     }
 
@@ -23,11 +23,11 @@ public class AuthManager : IAuthManager
     {
         var roleEnum = _roleEnumMapper.ConvertToRoleEnum(request.Role);
 
-        var user = UserMapper.ToUserModel(request);
+        var user = _userMapper.ToUserEntity(request);
 
-        await _authService.RegisterWithEmailAndPasswordAsync(user, request.Password, roleEnum.ToString());
+        var (createdUser, createdRole) = await _authService.RegisterWithEmailAndPasswordAsync(user, request.Password, roleEnum.ToString());
 
-        var response = UserMapper.ToAuthDataResponseModel(user, request.Role);
+        var response = _userMapper.ToAuthDataResponseModel(createdUser, createdRole);
         return response;
     }
 
@@ -35,7 +35,7 @@ public class AuthManager : IAuthManager
     {
         var (user, role) = await _authService.SigninWithEmailAndPasswordAsync(request.Email, request.Password);
 
-        var response = UserMapper.ToAuthDataResponseModel(user, role);
+        var response = _userMapper.ToAuthDataResponseModel(user, role);
         return response;
     }
 
