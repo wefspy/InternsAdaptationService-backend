@@ -1,65 +1,21 @@
 ﻿using InternsAdaptationService.Data.Context;
 using InternsAdaptationService.Data.Entities;
 using InternsAdaptationService.Data.Interfaces.IRepositories;
+using InternsAdaptationService.Data.Repositories.Parents;
 using Microsoft.EntityFrameworkCore;
 
 namespace InternsAdaptationService.Data.Repositories;
 
-public class PatternTaskRepository : IPatternTaskRepository
+public class PatternTaskRepository : BaseRepository<PatternTaskEntity>, IPatternTaskRepository
 {
-    private readonly InternsAdaptationServiceDbContext _db;
-
-    public PatternTaskRepository(InternsAdaptationServiceDbContext db)
+    public PatternTaskRepository(InternsAdaptationServiceDbContext db): base(db)
     {
-        _db = db;
-    }
+    }   
 
-    public async Task<PatternTaskEntity> CreateAsync(PatternTaskEntity request)
-    {
-        var record = await _db.PatternTasks.AddAsync(request);
-
-        await _db.SaveChangesAsync();
-
-        return record.Entity;
-    }
-
-    public async Task UpdateAsync(PatternTaskEntity request)
-    {
-        _db.PatternTasks.Update(request);
-
-        await _db.SaveChangesAsync();
-    }
-
-    public async Task<IEnumerable<PatternTaskEntity>> GetAllAsync()
+    public async Task<IEnumerable<PatternTaskEntity>> GetByMentorIdAsync(Guid id)
     {
         return await _db.PatternTasks
-            .AsNoTracking()
-            .ToArrayAsync();
-    }
-
-    public async Task<PatternTaskEntity> GetByIdAsync(Guid id)
-    {
-        var entity = await _db.PatternTasks
-            .AsNoTracking()
-            .FirstOrDefaultAsync(patternTask => patternTask.Id == id);
-
-        if (entity == null)
-            throw new Exception("EntityNotFound");
-
-        return entity;
-    }
-
-    public async Task<IEnumerable<PatternTaskEntity>> GetByMentorIdAsync(Guid mentorId)
-    {
-        return await _db.PatternTasks
-            .Where(patternTask => patternTask.MentorId == mentorId)
+            .Where(patternTask => patternTask.MentorId == id)
             .ToListAsync();
-    }
-
-    public async Task DeleteAsync(PatternTaskEntity request)
-    {
-        _db.PatternTasks.Remove(request);
-
-        await _db.SaveChangesAsync();
     }
 }
