@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Data.Entities;
 
-namespace InternsAdaptationService.Infrastructure.Interfaces.IServices;
+namespace InternsAdaptationService.Infrastructure.Interfaces.IServices.Auth;
 
 public interface IAuthService
 {

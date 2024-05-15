@@ -1,10 +1,10 @@
-﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.PatternTask;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.PatternTask;
-using InternsAdaptationService.Infrastructure.Interfaces.IManagers;
-using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers;
-using InternsAdaptationService.Infrastructure.Interfaces.IServices;
+﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternTask;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.PatternTask;
+using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
+using InternsAdaptationService.Infrastructure.Interfaces.IServices.Patterns;
 
-namespace InternsAdaptationService.Infrastructure.Managers;
+namespace InternsAdaptationService.Infrastructure.Managers.Patterns;
 
 public class PatternTaskManager : IPatternTaskManager
 {

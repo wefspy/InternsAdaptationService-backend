@@ -1,9 +1,9 @@
 ﻿using InternsAdaptationService.Data.Entities;
 using InternsAdaptationService.Infrastructure.Interfaces.IHandlers;
-using InternsAdaptationService.Infrastructure.Interfaces.IServices;
+using InternsAdaptationService.Infrastructure.Interfaces.IServices.Auth;
 using Microsoft.AspNetCore.Identity;
 
-namespace InternsAdaptationService.Infrastructure.Services;
+namespace InternsAdaptationService.Infrastructure.Services.Auth;
 
 public class AuthService : IAuthService
 {

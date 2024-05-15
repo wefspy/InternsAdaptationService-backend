@@ -1,4 +1,4 @@
-﻿namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.PatternTask;
+﻿namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternTask;
 
 public class PatternTaskRequestModel
 {

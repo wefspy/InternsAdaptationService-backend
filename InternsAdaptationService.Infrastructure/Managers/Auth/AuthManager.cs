@@ -1,21 +1,21 @@
 ﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
-using InternsAdaptationService.Infrastructure.Interfaces.IManagers;
-using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers;
+using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Auth;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Auth;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IEnumMappers;
-using InternsAdaptationService.Infrastructure.Interfaces.IServices;
+using InternsAdaptationService.Infrastructure.Interfaces.IServices.Auth;
 
-namespace InternsAdaptationService.Infrastructure.Managers;
+namespace InternsAdaptationService.Infrastructure.Managers.Auth;
 
 public class AuthManager : IAuthManager
 {
     private readonly IAuthService _authService;
     private readonly IUserMapper _userMapper;
     private readonly IRoleEnumMapper _roleEnumMapper;
-    
-    public AuthManager(IAuthService authService, IUserMapper userMapper, IRoleEnumMapper roleEnumMapper) 
-    { 
-        _authService = authService; 
+
+    public AuthManager(IAuthService authService, IUserMapper userMapper, IRoleEnumMapper roleEnumMapper)
+    {
+        _authService = authService;
         _userMapper = userMapper;
         _roleEnumMapper = roleEnumMapper;
     }

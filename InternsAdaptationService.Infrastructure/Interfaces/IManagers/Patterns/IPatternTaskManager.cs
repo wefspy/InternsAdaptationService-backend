@@ -1,8 +1,8 @@
 ﻿using InternsAdaptationService.Data.Entities;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.PatternTask;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.PatternTask;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternTask;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.PatternTask;
 
-namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers;
+namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
 
 public interface IPatternTaskManager
 {

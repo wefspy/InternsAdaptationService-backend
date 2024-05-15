@@ -2,7 +2,7 @@
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
 
-namespace InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers;
+namespace InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Auth;
 
 public interface IUserMapper
 {

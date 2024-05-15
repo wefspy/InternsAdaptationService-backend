@@ -1,7 +1,7 @@
 ﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
 
-namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers;
+namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers.Auth;
 
 public interface IAuthManager
 {

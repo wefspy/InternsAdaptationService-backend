@@ -2,9 +2,9 @@
 using InternsAdaptationService.Data.Entities;
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
-using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Auth;
 
-namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers;
+namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Auth;
 
 public class UserMapper : IUserMapper
 {

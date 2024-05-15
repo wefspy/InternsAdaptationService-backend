@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
-using InternsAdaptationService.Infrastructure.Interfaces.IManagers;
+using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Auth;
 using Microsoft.AspNetCore.Mvc;
 
 

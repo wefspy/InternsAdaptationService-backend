@@ -1,9 +1,9 @@
 ﻿using InternsAdaptationService.Data.Entities;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.PatternTask;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.PatternTask;
-using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternTask;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.PatternTask;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
 
-namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers;
+namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Patterns;
 
 public class PatternTaskMapper : IPatternTaskMapper
 {

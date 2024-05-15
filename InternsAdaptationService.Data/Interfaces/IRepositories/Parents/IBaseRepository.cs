@@ -1,6 +1,6 @@
 ﻿namespace InternsAdaptationService.Data.Interfaces.IRepositories.Parents;
 
-public interface IBaseRepository<TEntity>
+public interface IBaseRepository<TEntity> where TEntity : class
 {
     public Task<TEntity> CreateAsync(TEntity request);
 
