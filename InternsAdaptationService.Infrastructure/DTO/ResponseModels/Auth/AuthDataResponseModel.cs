@@ -1,5 +1,4 @@
-﻿using InternsAdaptationService.Data.Enums;
-using InternsAdaptationService.Infrastructure.DTO.Models;
+﻿using InternsAdaptationService.Infrastructure.DTO.TransferModels;
 
 namespace InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
 

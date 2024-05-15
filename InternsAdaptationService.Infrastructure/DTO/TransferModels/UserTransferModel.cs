@@ -1,4 +1,4 @@
-﻿namespace InternsAdaptationService.Infrastructure.DTO.Models;
+﻿namespace InternsAdaptationService.Infrastructure.DTO.TransferModels;
 
 public class UserTransferModel
 {

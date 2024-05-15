@@ -2,18 +2,18 @@
 using InternsAdaptationService.Data.Entities;
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
-using InternsAdaptationService.Infrastructure.Interfaces.IMappers;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers;
 
-namespace InternsAdaptationService.Infrastructure.Mappers;
+namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers;
 
-public class UserMapper: IUserMapper
+public class UserMapper : IUserMapper
 {
-    public AuthDataResponseModel ToAuthDataResponseModel(UserEntity user, string role)
+    public AuthDataResponseModel ToResponse(UserEntity user, string role)
     {
         return new AuthDataResponseModel(user.Id, role, user.Name, user.Surname, user.MiddleName, user.DesciptionProfile, user.Telegram, user.VK);
     }
 
-    public UserEntity ToUserEntity(RegistrationRequestModel requestModel)
+    public UserEntity ToEntity(RegistrationRequestModel requestModel)
     {
         return new UserEntity
         {

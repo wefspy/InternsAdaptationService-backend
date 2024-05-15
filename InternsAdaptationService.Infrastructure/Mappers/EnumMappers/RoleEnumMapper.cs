@@ -1,7 +1,7 @@
 ﻿using InternsAdaptationService.Data.Enums;
-using InternsAdaptationService.Infrastructure.Interfaces.IMappers;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IEnumMappers;
 
-namespace InternsAdaptationService.Infrastructure.Mappers;
+namespace InternsAdaptationService.Infrastructure.Mappers.EnumMappers;
 
 public class RoleEnumMapper : IRoleEnumMapper
 {

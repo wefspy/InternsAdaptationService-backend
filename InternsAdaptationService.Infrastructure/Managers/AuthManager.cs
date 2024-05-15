@@ -1,7 +1,8 @@
 ﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers;
-using InternsAdaptationService.Infrastructure.Interfaces.IMappers;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IEnumMappers;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices;
 
 namespace InternsAdaptationService.Infrastructure.Managers;
@@ -23,11 +24,11 @@ public class AuthManager : IAuthManager
     {
         var roleEnum = _roleEnumMapper.ConvertToRoleEnum(request.Role);
 
-        var user = _userMapper.ToUserEntity(request);
+        var user = _userMapper.ToEntity(request);
 
         var (createdUser, createdRole) = await _authService.RegisterWithEmailAndPasswordAsync(user, request.Password, roleEnum.ToString());
 
-        var response = _userMapper.ToAuthDataResponseModel(createdUser, createdRole);
+        var response = _userMapper.ToResponse(createdUser, createdRole);
         return response;
     }
 
@@ -35,7 +36,7 @@ public class AuthManager : IAuthManager
     {
         var (user, role) = await _authService.SigninWithEmailAndPasswordAsync(request.Email, request.Password);
 
-        var response = _userMapper.ToAuthDataResponseModel(user, role);
+        var response = _userMapper.ToResponse(user, role);
         return response;
     }
 

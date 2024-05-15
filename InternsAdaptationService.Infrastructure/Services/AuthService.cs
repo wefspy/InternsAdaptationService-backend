@@ -41,15 +41,15 @@ public class AuthService : IAuthService
     {
         var user = await _userManager.FindByEmailAsync(email);
         if (user == null)
-            throw new Exception("User not created");
+            throw new Exception("UserNotCreated");
 
         var role = (await _userManager.GetRolesAsync(user!)).First();
         if (role == null)
-            throw new Exception("User is not assigned a role");
+            throw new Exception("UserIsNotAssignedRole");
 
         var signinUser = await _signinManager.PasswordSignInAsync(email, password, true, true);
         if (!signinUser.Succeeded)
-            throw new Exception("Invalid login or password");
+            throw new Exception("InvalidLoginOrPassword");
 
         return (user, role);
     }

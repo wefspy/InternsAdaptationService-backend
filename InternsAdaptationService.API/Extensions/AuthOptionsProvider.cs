@@ -1,9 +1,8 @@
 ﻿using InternsAdaptationService.Data.Context;
 using InternsAdaptationService.Data.Entities;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace InternsAdaptationService.Infrastructure.DependencyInjection;
+namespace InternsAdaptationService.API.Extensions;
 
 public static class AuthOptionsProvider
 {
