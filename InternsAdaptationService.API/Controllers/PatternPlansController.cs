@@ -1,28 +1,28 @@
-﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternTask;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.PatternTask;
+﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternPlan;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.PatternPlan;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternsAdaptationService.API.Controllers;
 
-[Route("api/pattern/tasks")]
+[Route("api/pattern/plans")]
 [ApiController]
-public class PatternTasksController : ControllerBase
+public class PatternPlansController : ControllerBase
 {
-    private readonly IPatternTaskManager _patternTaskManager;
+    private readonly IPatternPlanManager _patternPlanManager;
 
-    public PatternTasksController(IPatternTaskManager patternTaskManager)
+    public PatternPlansController(IPatternPlanManager patternPlanManager)
     {
-        _patternTaskManager = patternTaskManager;
+        _patternPlanManager = patternPlanManager;
     }
 
     [HttpPost]
-    public async Task<ActionResult<PatternTaskResponseModel>> Create(PatternTaskRequestModel request)
+    public async Task<ActionResult<PatternPlanResponseModel>> Create(PatternPlanRequestModel request)
     {
         try
         {
-            var result = await _patternTaskManager.CreateAsync(request);
+            var result = await _patternPlanManager.CreateAsync(request);
 
             return Ok(result);
         }
@@ -33,11 +33,11 @@ public class PatternTasksController : ControllerBase
     }
 
     [HttpPut("{id:Guid}")]
-    public async Task<IActionResult> Update(Guid id, PatternTaskRequestModel request)
+    public async Task<IActionResult> Update(Guid id, PatternPlanRequestModel request)
     {
         try
         {
-            await _patternTaskManager.UpdateAsync(id, request);
+            await _patternPlanManager.UpdateAsync(id, request);
 
             return Ok();
         }
@@ -48,11 +48,11 @@ public class PatternTasksController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<PatternTaskResponseModel>>> GetAll()
+    public async Task<ActionResult<IEnumerable<PatternPlanResponseModel>>> GetAll()
     {
         try
         {
-            var result = await _patternTaskManager.GetAllAsync();
+            var result = await _patternPlanManager.GetAllAsync();
 
             return Ok(result);
         }
@@ -63,30 +63,30 @@ public class PatternTasksController : ControllerBase
     }
 
     [HttpGet("{id:Guid}")]
-    public async Task<ActionResult<PatternTaskResponseModel>> GetById(Guid id)
+    public async Task<ActionResult<PatternPlanResponseModel>> GetById(Guid id)
     {
         try
         {
-            var result = await _patternTaskManager.GetByIdAsync(id);
+            var result = await _patternPlanManager.GetByIdAsync(id);
 
             return Ok(result);
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             return BadRequest(ex.Message);
         }
     }
 
     [HttpGet("mentorId/{id:Guid}")]
-    public async Task<ActionResult<IEnumerable<PatternTaskResponseModel>>> GetByMentorId(Guid id)
+    public async Task<ActionResult<IEnumerable<PatternPlanResponseModel>>> GetByMentorId(Guid id)
     {
         try
         {
-            var result = await _patternTaskManager.GetByMentorIdAsync(id);
+            var result = await _patternPlanManager.GetByMentorIdAsync(id);
 
             return Ok(result);
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             return BadRequest(ex.Message);
         }
@@ -97,7 +97,7 @@ public class PatternTasksController : ControllerBase
     {
         try
         {
-            await _patternTaskManager.DeleteAsync(id);
+            await _patternPlanManager.DeleteAsync(id);
 
             return Ok();
         }

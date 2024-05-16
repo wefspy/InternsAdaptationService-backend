@@ -26,9 +26,9 @@ public class AuthService : IAuthService
         if (!createUser.Succeeded)
             throw new Exception(_errorHandler.IdentityExceptionsToString(createUser.Errors));
 
-        var createRole = await _roleManager.CreateAsync(new RoleEntity() { Name = role });
-        if (!createRole.Succeeded)
-            throw new Exception(_errorHandler.IdentityExceptionsToString(createRole.Errors));
+        var roleExist = await _roleManager.RoleExistsAsync(role);
+        if (!roleExist)
+            await _roleManager.CreateAsync(new RoleEntity() { Name = role });
 
         var addRole = await _userManager.AddToRoleAsync(user, role);
         if (!addRole.Succeeded)
@@ -43,7 +43,7 @@ public class AuthService : IAuthService
         if (user == null)
             throw new Exception("UserNotCreated");
 
-        var role = (await _userManager.GetRolesAsync(user!)).First();
+        var role = (await _userManager.GetRolesAsync(user!)).FirstOrDefault()!;
         if (role == null)
             throw new Exception("UserIsNotAssignedRole");
 

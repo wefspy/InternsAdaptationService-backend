@@ -28,6 +28,7 @@ public static class DataLayerProvider
     private static IServiceCollection InjectRepositories(this IServiceCollection services)
     {
         services.AddTransient<IPatternTaskRepository, PatternTaskRepository>();
+        services.AddTransient<IPatternPlanRepository, PatternPlanRepository>();
 
         return services;
     }
