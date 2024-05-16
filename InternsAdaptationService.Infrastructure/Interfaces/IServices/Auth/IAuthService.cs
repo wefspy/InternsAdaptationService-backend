@@ -1,4 +1,4 @@
-﻿using InternsAdaptationService.Data.Entities;
+﻿using InternsAdaptationService.Data.Entities.Auth;
 
 namespace InternsAdaptationService.Infrastructure.Interfaces.IServices.Auth;
 

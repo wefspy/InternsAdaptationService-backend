@@ -1,8 +1,10 @@
 ﻿using InternsAdaptationService.Data.Enums;
-using InternsAdaptationService.Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using InternsAdaptationService.Data.Entities.Auth;
+using InternsAdaptationService.Data.Entities.Patterns;
+using InternsAdaptationService.Data.Entities.Internships;
 
 namespace InternsAdaptationService.Data.Context;
 

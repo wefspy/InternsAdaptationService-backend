@@ -1,5 +1,5 @@
 ﻿using InternsAdaptationService.Data.Context;
-using InternsAdaptationService.Data.Entities;
+using InternsAdaptationService.Data.Entities.Auth;
 using Microsoft.AspNetCore.Identity;
 
 namespace InternsAdaptationService.API.Extensions;

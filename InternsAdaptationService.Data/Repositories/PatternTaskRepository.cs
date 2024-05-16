@@ -1,5 +1,5 @@
 ﻿using InternsAdaptationService.Data.Context;
-using InternsAdaptationService.Data.Entities;
+using InternsAdaptationService.Data.Entities.Patterns;
 using InternsAdaptationService.Data.Interfaces.IRepositories;
 using InternsAdaptationService.Data.Repositories.Parents;
 using Microsoft.EntityFrameworkCore;

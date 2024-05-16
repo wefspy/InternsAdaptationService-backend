@@ -1,5 +1,5 @@
-﻿using InternsAdaptationService.Data.Entities;
-using InternsAdaptationService.Infrastructure.Interfaces.IServices.Parent;
+﻿using InternsAdaptationService.Data.Entities.Patterns;
+using InternsAdaptationService.Infrastructure.Interfaces.IServices.Parents;
 
 namespace InternsAdaptationService.Infrastructure.Interfaces.IServices.Patterns;
 

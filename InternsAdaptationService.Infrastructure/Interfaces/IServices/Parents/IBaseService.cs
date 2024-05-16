@@ -1,4 +1,4 @@
-﻿namespace InternsAdaptationService.Infrastructure.Interfaces.IServices.Parent;
+﻿namespace InternsAdaptationService.Infrastructure.Interfaces.IServices.Parents;
 
 public interface IBaseService<TEntity> where TEntity : class
 {

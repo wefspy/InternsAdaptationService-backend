@@ -1,4 +1,4 @@
-﻿using InternsAdaptationService.Data.Entities;
+﻿using InternsAdaptationService.Data.Entities.Auth;
 using InternsAdaptationService.Infrastructure.Interfaces.IHandlers;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Auth;
 using Microsoft.AspNetCore.Identity;

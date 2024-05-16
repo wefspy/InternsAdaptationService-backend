@@ -1,9 +1,10 @@
 ﻿using InternsAdaptationService.Data.Enums;
 using InternsAdaptationService.Data.Entities.ParentEntities;
+using InternsAdaptationService.Data.Entities.Auth;
 
-namespace InternsAdaptationService.Data.Entities;
+namespace InternsAdaptationService.Data.Entities.Internships;
 
-public class InternshipTaskEntity: BaseEntity
+public class InternshipTaskEntity : BaseEntity
 {
     public required Guid InternId { get; set; }
 

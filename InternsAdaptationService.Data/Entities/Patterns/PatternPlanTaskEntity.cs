@@ -1,8 +1,8 @@
 ﻿using InternsAdaptationService.Data.Entities.ParentEntities;
 
-namespace InternsAdaptationService.Data.Entities;
+namespace InternsAdaptationService.Data.Entities.Patterns;
 
-public class PatternPlanTaskEntity: BaseEntity
+public class PatternPlanTaskEntity : BaseEntity
 {
     public required Guid PlanId { get; set; }
 

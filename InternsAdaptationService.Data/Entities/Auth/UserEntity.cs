@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace InternsAdaptationService.Data.Entities;
+namespace InternsAdaptationService.Data.Entities.Auth;
 
-public class UserEntity: IdentityUser<Guid>
+public class UserEntity : IdentityUser<Guid>
 {
     public required string Name { get; set; }
 

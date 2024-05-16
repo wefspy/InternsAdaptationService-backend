@@ -1,8 +1,8 @@
 ﻿using InternsAdaptationService.Data.Enums;
-using InternsAdaptationService.Data.Entities;
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Auth;
+using InternsAdaptationService.Data.Entities.Auth;
 
 namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Auth;
 

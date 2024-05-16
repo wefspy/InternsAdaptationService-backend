@@ -1,4 +1,4 @@
-﻿using InternsAdaptationService.Data.Entities;
+﻿using InternsAdaptationService.Data.Entities.Auth;
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
 

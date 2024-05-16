@@ -1,8 +1,9 @@
-﻿using InternsAdaptationService.Data.Entities.ParentEntities;
+﻿using InternsAdaptationService.Data.Entities.Auth;
+using InternsAdaptationService.Data.Entities.ParentEntities;
 
-namespace InternsAdaptationService.Data.Entities;
+namespace InternsAdaptationService.Data.Entities.Internships;
 
-public class MentorInternEntity: BaseEntity
+public class MentorInternEntity : BaseEntity
 {
     public required Guid MentorId { get; set; }
 

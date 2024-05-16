@@ -1,4 +1,4 @@
-﻿using InternsAdaptationService.Data.Entities;
+﻿using InternsAdaptationService.Data.Entities.Patterns;
 using InternsAdaptationService.Data.Interfaces.IRepositories.Parents;
 
 namespace InternsAdaptationService.Data.Interfaces.IRepositories;

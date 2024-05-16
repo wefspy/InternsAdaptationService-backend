@@ -1,8 +1,8 @@
 ﻿using InternsAdaptationService.Data.Entities.ParentEntities;
 
-namespace InternsAdaptationService.Data.Entities;
+namespace InternsAdaptationService.Data.Entities.Internships;
 
-public class InternshipSubtaskEntity: BaseEntity
+public class InternshipSubtaskEntity : BaseEntity
 {
     public required Guid TaskId { get; set; }
 

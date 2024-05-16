@@ -1,7 +1,7 @@
-﻿using InternsAdaptationService.Data.Entities;
+﻿using InternsAdaptationService.Data.Entities.Patterns;
 using InternsAdaptationService.Data.Interfaces.IRepositories;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Patterns;
-using InternsAdaptationService.Infrastructure.Services.Pattern;
+using InternsAdaptationService.Infrastructure.Services.Parents;
 
 namespace InternsAdaptationService.Infrastructure.Services.Patterns;
 
@@ -16,7 +16,6 @@ public class PatternTaskService : BaseService<PatternTaskEntity>, IPatternTaskSe
 
     public async Task<IEnumerable<PatternTaskEntity>> GetByMentorIdAsync(Guid id)
     {
-        
         return await _patternTaskRepository.GetByMentorIdAsync(id);
     }
 }

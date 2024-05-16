@@ -1,4 +1,4 @@
-﻿using InternsAdaptationService.Data.Entities;
+﻿using InternsAdaptationService.Data.Entities.Patterns;
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternTask;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.PatternTask;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
