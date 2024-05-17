@@ -20,7 +20,7 @@ public abstract class BaseManager<TEntity, TRequestModel, TResponseModel>
         _mapper = mapper;
     }
 
-    public async Task<TResponseModel> CreateAsync(TRequestModel request)
+    public virtual async Task<TResponseModel> CreateAsync(TRequestModel request)
     {
         var newEntity = _mapper.ToNewEntity(request);
 
@@ -29,28 +29,28 @@ public abstract class BaseManager<TEntity, TRequestModel, TResponseModel>
         return _mapper.ToResponse(created);
     }
 
-    public async Task UpdateAsync(Guid id, TRequestModel request)
+    public virtual async Task UpdateAsync(Guid id, TRequestModel request)
     {
         var existEntity = _mapper.ToExistEntity(id, request);
 
         await _service.UpdateAsync(existEntity);
     }
 
-    public async Task<IEnumerable<TResponseModel>> GetAllAsync()
+    public virtual async Task<IEnumerable<TResponseModel>> GetAllAsync()
     {
         var entities = await _service.GetAllAsync();
 
         return entities.Select(entity => _mapper.ToResponse(entity));
     }
 
-    public async Task<TResponseModel> GetByIdAsync(Guid id)
+    public virtual async Task<TResponseModel> GetByIdAsync(Guid id)
     {
         var entity = await _service.GetByIdAsync(id);
 
         return _mapper.ToResponse(entity);
     }
 
-    public async Task DeleteAsync(Guid id)
+    public virtual async Task DeleteAsync(Guid id)
     {
         await _service.DeleteAsync(id);
     }

@@ -1,10 +1,12 @@
 ﻿using InternsAdaptationService.Data.Context;
+using InternsAdaptationService.Data.Entities.Parents;
 using InternsAdaptationService.Data.Interfaces.IRepositories.Parents;
 using Microsoft.EntityFrameworkCore;
 
 namespace InternsAdaptationService.Data.Repositories.Parents;
 
-public abstract class BaseRepository<TEntity>: IBaseRepository<TEntity> where TEntity : class
+public abstract class BaseRepository<TEntity>: IBaseRepository<TEntity> 
+    where TEntity : BaseEntity
 {
     protected readonly InternsAdaptationServiceDbContext _db;
     protected readonly DbSet<TEntity> _dbSet;
