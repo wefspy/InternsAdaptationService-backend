@@ -1,29 +1,15 @@
 ﻿using InternsAdaptationService.Data.Entities.Patterns;
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternPlan;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.PatternPlan;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
+using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Parents;
 
 namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Patterns;
 
-public class PatternPlanMapper : IPatternPlanMapper
+public class PatternPlanMapper : BaseDTOMapper<PatternPlanEntity, PatternPlanRequestModel, PatternPlanResponseModel>, 
+    IPatternPlanMapper
 {
-    public PatternPlanEntity ToNewEntity(PatternPlanRequestModel request)
-    {
-        var entity = ToEntity(request);
-        entity.Id = Guid.NewGuid();
-
-        return entity;
-    }
-
-    public PatternPlanEntity ToExistEntity(Guid id, PatternPlanRequestModel request)
-    {
-        var entity = ToEntity(request);
-        entity.Id = id;
-
-        return entity;
-    }
-
-    private PatternPlanEntity ToEntity(PatternPlanRequestModel request)
+    protected override PatternPlanEntity ToEntity(PatternPlanRequestModel request)
     {
         return new PatternPlanEntity
         {
@@ -32,7 +18,7 @@ public class PatternPlanMapper : IPatternPlanMapper
         };
     }
 
-    public PatternPlanResponseModel ToResponse(PatternPlanEntity entity)
+    public override PatternPlanResponseModel ToResponse(PatternPlanEntity entity)
     {
         return new PatternPlanResponseModel(entity.Id, entity.MentorId, entity.Title);
     }

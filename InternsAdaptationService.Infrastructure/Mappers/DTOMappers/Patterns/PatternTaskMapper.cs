@@ -1,29 +1,15 @@
 ﻿using InternsAdaptationService.Data.Entities.Patterns;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternTask;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.PatternTask;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
+using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Parents;
 
 namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Patterns;
 
-public class PatternTaskMapper : IPatternTaskMapper
+public class PatternTaskMapper : BaseDTOMapper<PatternTaskEntity, PatternTaskRequestModel, PatternTaskResponseModel>, 
+    IPatternTaskMapper
 {
-    public PatternTaskEntity ToNewEntity(PatternTaskRequestModel request)
-    {
-        var entity = ToEntity(request);
-        entity.Id = Guid.NewGuid();
-
-        return entity;
-    }
-
-    public PatternTaskEntity ToExistEntity(Guid id, PatternTaskRequestModel request)
-    {
-        var entity = ToEntity(request);
-        entity.Id = id;
-
-        return entity;
-    }
-
-    private PatternTaskEntity ToEntity(PatternTaskRequestModel request)
+    protected override PatternTaskEntity ToEntity(PatternTaskRequestModel request)
     {
         return new PatternTaskEntity
         {
@@ -33,7 +19,7 @@ public class PatternTaskMapper : IPatternTaskMapper
         };
     }
 
-    public PatternTaskResponseModel ToResponse(PatternTaskEntity entity)
+    public override PatternTaskResponseModel ToResponse(PatternTaskEntity entity)
     {
         return new PatternTaskResponseModel(entity.Id, entity.MentorId, entity.Title, entity.Description);
     }
