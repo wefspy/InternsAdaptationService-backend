@@ -4,7 +4,7 @@ using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Auth;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace InternsAdaptationService.API.Controllers;
+namespace InternsAdaptationService.API.Controllers.Auth;
 
 [Route("api/auth")]
 [ApiController]
@@ -12,7 +12,7 @@ public class AuthController : ControllerBase
 {
     private readonly IAuthManager _authManager;
 
-    public AuthController(IAuthManager authManager) 
+    public AuthController(IAuthManager authManager)
     {
         _authManager = authManager;
     }

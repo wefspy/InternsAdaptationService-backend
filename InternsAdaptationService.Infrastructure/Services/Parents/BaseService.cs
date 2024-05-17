@@ -4,7 +4,7 @@ using InternsAdaptationService.Infrastructure.Interfaces.IServices.Parents;
 
 namespace InternsAdaptationService.Infrastructure.Services.Parents;
 
-public class BaseService<TEntity> : IBaseService<TEntity> 
+public abstract class BaseService<TEntity> : IBaseService<TEntity> 
     where TEntity : IBaseEntity
 {
     private readonly IBaseRepository<TEntity> _repository;
