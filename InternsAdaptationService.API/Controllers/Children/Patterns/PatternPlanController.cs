@@ -6,19 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InternsAdaptationService.API.Controllers.Children.Patterns;
 
-[Route("api/pattern/plans")]
+[Route("api/pattern/plan")]
 [ApiController]
-public class PatternPlansController : BaseController<PatternPlanRequestModel, PatternPlanResponseModel, IPatternPlanManager>
+public class PatternPlanController : BaseController<PatternPlanRequestModel, PatternPlanResponseModel, IPatternPlanManager>
 {
     private readonly IPatternPlanManager _patternPlanManager;
 
-    public PatternPlansController(IPatternPlanManager patternPlanManager) :
+    public PatternPlanController(IPatternPlanManager patternPlanManager) :
         base(patternPlanManager)
     {
         _patternPlanManager = patternPlanManager;
     }
 
-    [HttpGet("mentorId/{id:Guid}")]
+    [HttpGet("mentor/{id:Guid}")]
     public async Task<ActionResult<IEnumerable<PatternPlanResponseModel>>> GetByMentorId(Guid id)
     {
         try

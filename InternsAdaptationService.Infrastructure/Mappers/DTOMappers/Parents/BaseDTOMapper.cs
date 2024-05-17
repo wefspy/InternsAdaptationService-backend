@@ -1,10 +1,11 @@
 ﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Parents;
 using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
 
 namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Parents;
 
-public abstract class BaseDTOMapper<TEntity, TRequestModel, TResponseModel>
+public abstract class BaseDTOMapper<TEntity, TRequestModel, TResponseModel> : IBaseDTOMapper<TEntity, TRequestModel, TResponseModel>
     where TEntity : IBaseEntity
     where TRequestModel : IBaseRequestModel
     where TResponseModel : IBaseResponseModel

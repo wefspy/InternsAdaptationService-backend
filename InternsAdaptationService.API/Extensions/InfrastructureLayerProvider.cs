@@ -34,6 +34,7 @@ public static class InfrastructureLayerProvider
         services.AddTransient<IAuthManager, AuthManager>();
         services.AddTransient<IPatternTaskManager, PatternTaskManager>();
         services.AddTransient<IPatternPlanManager, PatternPlanManager>();
+        services.AddTransient<IPatternPlanTaskManager, PatternPlanTaskManager>();
 
         return services;
     }
@@ -45,6 +46,7 @@ public static class InfrastructureLayerProvider
         services.AddTransient<IUserMapper, UserMapper>();
         services.AddTransient<IPatternTaskMapper, PatternTaskMapper>();
         services.AddTransient<IPatternPlanMapper, PatternPlanMapper>();
+        services.AddTransient<IPatternPlanTaskMapper, PatternPlanTaskMapper>();
 
         return services;
     }
@@ -54,6 +56,7 @@ public static class InfrastructureLayerProvider
         services.AddTransient<IAuthService, AuthService>();
         services.AddTransient<IPatternTaskService, PatternTaskService>();
         services.AddTransient<IPatternPlanService, PatternPlanService>();
+        services.AddTransient<IPatternPlanTaskService, PatternPlanTaskService>();
 
         return services;
     }

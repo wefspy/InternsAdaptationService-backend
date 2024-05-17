@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Data.Context;
-using InternsAdaptationService.Data.Interfaces.IRepositories;
-using InternsAdaptationService.Data.Repositories;
+using InternsAdaptationService.Data.Interfaces.IRepositories.Patterns;
+using InternsAdaptationService.Data.Repositories.Patterns;
 using Microsoft.EntityFrameworkCore;
 
 namespace InternsAdaptationService.API.Extensions;
@@ -29,6 +29,7 @@ public static class DataLayerProvider
     {
         services.AddTransient<IPatternTaskRepository, PatternTaskRepository>();
         services.AddTransient<IPatternPlanRepository, PatternPlanRepository>();
+        services.AddTransient<IPatternPlanTaskRepository, PatternPlanTaskRepository>();
 
         return services;
     }
