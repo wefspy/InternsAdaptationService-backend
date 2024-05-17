@@ -1,4 +1,4 @@
-﻿using InternsAdaptationService.Data.Entities.ParentEntities;
+﻿using InternsAdaptationService.Data.Entities.Parents;
 
 namespace InternsAdaptationService.Data.Entities.Patterns;
 

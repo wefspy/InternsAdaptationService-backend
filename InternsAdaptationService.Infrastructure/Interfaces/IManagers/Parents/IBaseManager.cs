@@ -1,8 +1,11 @@
-﻿namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers.Parents;
+﻿using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
+using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
+
+namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers.Parents;
 
 public interface IBaseManager<TRequestModel, TResponseModel> 
-    where TRequestModel : class
-    where TResponseModel : class
+    where TRequestModel : IBaseRequestModel
+    where TResponseModel : IBaseResponseModel
 {
     public Task<TResponseModel> CreateAsync(TRequestModel request);
 

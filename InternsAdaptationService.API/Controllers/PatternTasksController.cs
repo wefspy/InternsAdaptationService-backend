@@ -1,5 +1,5 @@
-﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternTask;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.PatternTask;
+﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

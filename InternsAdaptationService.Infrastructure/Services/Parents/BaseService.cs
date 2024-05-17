@@ -1,9 +1,12 @@
-﻿using InternsAdaptationService.Data.Interfaces.IRepositories.Parents;
+﻿using InternsAdaptationService.Data.Entities.Parents;
+using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
+using InternsAdaptationService.Data.Interfaces.IRepositories.Parents;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Parents;
 
 namespace InternsAdaptationService.Infrastructure.Services.Parents;
 
-public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : class
+public class BaseService<TEntity> : IBaseService<TEntity> 
+    where TEntity : IBaseEntity
 {
     private readonly IBaseRepository<TEntity> _repository;
 

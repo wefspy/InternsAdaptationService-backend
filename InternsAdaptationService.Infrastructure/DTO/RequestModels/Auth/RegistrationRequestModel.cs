@@ -1,8 +1,8 @@
-﻿using InternsAdaptationService.Data.Enums;
+﻿using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 
 namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 
-public class RegistrationRequestModel: SignInRequestModel
+public class RegistrationRequestModel: SignInRequestModel, IBaseRequestModel
 {
     public string Name { get; }
 

@@ -1,6 +1,8 @@
-﻿namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternTask;
+﻿using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 
-public class PatternTaskRequestModel
+namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
+
+public class PatternTaskRequestModel : IBaseRequestModel
 {
     public Guid MentorId { get; }
 

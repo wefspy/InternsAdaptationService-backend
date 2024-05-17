@@ -1,6 +1,8 @@
-﻿namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
+﻿using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 
-public class SignInRequestModel
+namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
+
+public class SignInRequestModel: IBaseRequestModel
 {
     public string Password { get; }
 

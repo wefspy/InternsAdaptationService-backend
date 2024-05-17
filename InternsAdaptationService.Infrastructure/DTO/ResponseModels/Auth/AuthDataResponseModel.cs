@@ -1,8 +1,9 @@
 ﻿using InternsAdaptationService.Infrastructure.DTO.TransferModels;
+using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
 
 namespace InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
 
-public class AuthDataResponseModel: UserTransferModel
+public class AuthDataResponseModel: UserTransferModel, IBaseResponseModel
 {
     public Guid Id { get; }
 

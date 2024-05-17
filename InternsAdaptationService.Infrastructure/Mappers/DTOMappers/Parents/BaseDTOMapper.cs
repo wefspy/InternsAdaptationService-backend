@@ -1,11 +1,13 @@
-﻿using InternsAdaptationService.Data.Entities.ParentEntities;
+﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
+using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
 
 namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Parents;
 
 public abstract class BaseDTOMapper<TEntity, TRequestModel, TResponseModel>
-    where TEntity : BaseEntity
-    where TRequestModel : class
-    where TResponseModel : class
+    where TEntity : IBaseEntity
+    where TRequestModel : IBaseRequestModel
+    where TResponseModel : IBaseResponseModel
 {
     public virtual TEntity ToNewEntity(TRequestModel request)
     {

@@ -1,9 +1,13 @@
-﻿namespace InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Parents;
+﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
+using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
+
+namespace InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Parents;
 
 public interface IBaseDTOMapper<TEntity, TRequestModel, TResponseModel>
-    where TEntity : class
-    where TRequestModel : class
-    where TResponseModel : class
+    where TEntity : IBaseEntity
+    where TRequestModel : IBaseRequestModel
+    where TResponseModel : IBaseResponseModel
 {
     public TEntity ToNewEntity(TRequestModel request);
 

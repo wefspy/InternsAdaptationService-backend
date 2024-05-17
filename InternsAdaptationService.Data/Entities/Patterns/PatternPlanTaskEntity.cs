@@ -1,4 +1,4 @@
-﻿using InternsAdaptationService.Data.Entities.ParentEntities;
+﻿using InternsAdaptationService.Data.Entities.Parents;
 
 namespace InternsAdaptationService.Data.Entities.Patterns;
 
@@ -10,7 +10,7 @@ public class PatternPlanTaskEntity : BaseEntity
 
     public required DateTime StartDate { get; set; }
 
-    public required DateTime Deadline { get; set; }
+    public required DateTime EndDate { get; set; }
 
     public virtual PatternPlanEntity PatternPlan { get; set; }
 
