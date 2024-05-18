@@ -1,7 +1,7 @@
 ﻿using InternsAdaptationService.Data.Entities.Patterns;
 using InternsAdaptationService.Data.Interfaces.IRepositories.Patterns;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Patterns;
-using InternsAdaptationService.Infrastructure.Services.Parents;
+using InternsAdaptationService.Infrastructure.Services.Abstracts;
 
 namespace InternsAdaptationService.Infrastructure.Services.Patterns;
 

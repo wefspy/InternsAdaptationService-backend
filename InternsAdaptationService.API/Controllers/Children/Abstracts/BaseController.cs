@@ -5,10 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InternsAdaptationService.API.Controllers.Children.Abstracts;
 
-public abstract class BaseController<TRequest, TResponse, TManager> : ControllerBase
-    where TRequest : IBaseRequestModel
-    where TResponse : IBaseResponseModel
-    where TManager : IBaseManager<TRequest, TResponse>
+public abstract class BaseController<TRequestModel, TResponseModel, TManager> : ControllerBase
+    where TRequestModel : IBaseRequestModel
+    where TResponseModel : IBaseResponseModel
+    where TManager : IBaseManager<TRequestModel, TResponseModel>
 {
     private readonly TManager _manager;
 
@@ -18,7 +18,7 @@ public abstract class BaseController<TRequest, TResponse, TManager> : Controller
     }
 
     [HttpPost]
-    public virtual async Task<ActionResult<TResponse>> Create(TRequest request)
+    public virtual async Task<ActionResult<TResponseModel>> Create(TRequestModel request)
     {
         try
         {
@@ -33,7 +33,7 @@ public abstract class BaseController<TRequest, TResponse, TManager> : Controller
     }
 
     [HttpPut("{id:Guid}")]
-    public virtual async Task<IActionResult> Update(Guid id, TRequest request)
+    public virtual async Task<IActionResult> Update(Guid id, TRequestModel request)
     {
         try
         {
@@ -48,7 +48,7 @@ public abstract class BaseController<TRequest, TResponse, TManager> : Controller
     }
 
     [HttpGet]
-    public virtual async Task<ActionResult<IEnumerable<TResponse>>> GetAll()
+    public virtual async Task<ActionResult<IEnumerable<TResponseModel>>> GetAll()
     {
         try
         {
@@ -63,7 +63,7 @@ public abstract class BaseController<TRequest, TResponse, TManager> : Controller
     }
 
     [HttpGet("{id:Guid}")]
-    public virtual async Task<ActionResult<TResponse>> GetById(Guid id)
+    public virtual async Task<ActionResult<TResponseModel>> GetById(Guid id)
     {
         try
         {

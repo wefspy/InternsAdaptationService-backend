@@ -1,7 +1,7 @@
 ﻿using InternsAdaptationService.Data.Context;
 using InternsAdaptationService.Data.Entities.Patterns;
 using InternsAdaptationService.Data.Interfaces.IRepositories.Patterns;
-using InternsAdaptationService.Data.Repositories.Parents;
+using InternsAdaptationService.Data.Repositories.Abstracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace InternsAdaptationService.Data.Repositories.Patterns;

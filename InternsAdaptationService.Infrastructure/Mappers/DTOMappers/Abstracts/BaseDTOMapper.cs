@@ -3,7 +3,7 @@ using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Pa
 using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
 
-namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Parents;
+namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Abstracts;
 
 public abstract class BaseDTOMapper<TEntity, TRequestModel, TResponseModel> : IBaseDTOMapper<TEntity, TRequestModel, TResponseModel>
     where TEntity : IBaseEntity

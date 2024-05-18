@@ -2,7 +2,7 @@
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
-using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Parents;
+using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Abstracts;
 
 namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Patterns;
 

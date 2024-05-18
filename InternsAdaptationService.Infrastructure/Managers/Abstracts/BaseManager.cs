@@ -4,7 +4,7 @@ using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Parents;
 
-namespace InternsAdaptationService.Infrastructure.Managers.Parents;
+namespace InternsAdaptationService.Infrastructure.Managers.Abstracts;
 
 public abstract class BaseManager<TEntity, TRequestModel, TResponseModel>
         where TEntity : IBaseEntity
