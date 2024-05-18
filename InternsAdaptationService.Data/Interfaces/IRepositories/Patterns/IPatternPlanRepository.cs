@@ -1,5 +1,5 @@
 ﻿using InternsAdaptationService.Data.Entities.Patterns;
-using InternsAdaptationService.Data.Interfaces.IRepositories.Parents;
+using InternsAdaptationService.Data.Interfaces.IRepositories.Abstracts;
 
 namespace InternsAdaptationService.Data.Interfaces.IRepositories.Patterns;
 

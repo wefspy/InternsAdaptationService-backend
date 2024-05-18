@@ -1,8 +1,8 @@
 ﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
 
-namespace InternsAdaptationService.Data.Interfaces.IRepositories.Parents;
+namespace InternsAdaptationService.Data.Interfaces.IRepositories.Abstracts;
 
-public interface IBaseRepository<TEntity> 
+public interface IBaseRepository<TEntity>
     where TEntity : IBaseEntity
 {
     public Task<TEntity> CreateAsync(TEntity request);

@@ -2,7 +2,7 @@
 using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
 
-namespace InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Parents;
+namespace InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Abstracts;
 
 public interface IBaseDTOMapper<TEntity, TRequestModel, TResponseModel>
     where TEntity : IBaseEntity

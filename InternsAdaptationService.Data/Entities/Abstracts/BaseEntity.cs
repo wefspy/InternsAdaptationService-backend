@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
 
-namespace InternsAdaptationService.Data.Entities.Parents;
+namespace InternsAdaptationService.Data.Entities.Abstracts;
 
 public abstract class BaseEntity : IBaseEntity
 {

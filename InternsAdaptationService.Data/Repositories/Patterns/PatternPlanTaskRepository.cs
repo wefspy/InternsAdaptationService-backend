@@ -23,6 +23,7 @@ public class PatternPlanTaskRepository : BaseRepository<PatternPlanTaskEntity>, 
     {
         return await _dbSet
             .Where(entity => entity.PlanId == id)
+            .AsNoTracking()
             .ToArrayAsync();
     }
 }

@@ -1,9 +1,9 @@
 ﻿using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
 
-namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers.Parents;
+namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers.Abstracts;
 
-public interface IBaseManager<TRequestModel, TResponseModel> 
+public interface IBaseManager<TRequestModel, TResponseModel>
     where TRequestModel : IBaseRequestModel
     where TResponseModel : IBaseResponseModel
 {

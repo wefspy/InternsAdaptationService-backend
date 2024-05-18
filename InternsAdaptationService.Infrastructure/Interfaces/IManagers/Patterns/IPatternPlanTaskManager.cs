@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
-using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Abstracts;
 
 namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
 

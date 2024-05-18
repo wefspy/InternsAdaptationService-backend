@@ -16,6 +16,7 @@ public class PatternPlanRepository : BaseRepository<PatternPlanEntity>, IPattern
     {
         return await _dbSet
             .Where(entity => entity.MentorId == id)
-            .ToListAsync();
+            .AsNoTracking()
+            .ToArrayAsync();
     }
 }

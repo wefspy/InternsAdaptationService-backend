@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Data.Context;
-using InternsAdaptationService.Data.Entities.Parents;
-using InternsAdaptationService.Data.Interfaces.IRepositories.Parents;
+using InternsAdaptationService.Data.Entities.Abstracts;
+using InternsAdaptationService.Data.Interfaces.IRepositories.Abstracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace InternsAdaptationService.Data.Repositories.Abstracts;

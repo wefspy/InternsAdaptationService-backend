@@ -16,6 +16,7 @@ public class PatternTaskRepository : BaseRepository<PatternTaskEntity>, IPattern
     {
         return await _dbSet
             .Where(entity => entity.MentorId == id)
+            .AsNoTracking()
             .ToArrayAsync();
     }
 }

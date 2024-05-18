@@ -1,5 +1,5 @@
-﻿using InternsAdaptationService.Data.Entities.Auth;
-using InternsAdaptationService.Data.Entities.Parents;
+﻿using InternsAdaptationService.Data.Entities.Abstracts;
+using InternsAdaptationService.Data.Entities.Auth;
 
 namespace InternsAdaptationService.Data.Entities.Patterns;
 

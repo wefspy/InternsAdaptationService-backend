@@ -1,5 +1,5 @@
 ﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
-using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Abstracts;
 using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
 

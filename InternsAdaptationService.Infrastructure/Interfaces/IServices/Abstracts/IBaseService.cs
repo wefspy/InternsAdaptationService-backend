@@ -1,8 +1,8 @@
 ﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
 
-namespace InternsAdaptationService.Infrastructure.Interfaces.IServices.Parents;
+namespace InternsAdaptationService.Infrastructure.Interfaces.IServices.Abstracts;
 
-public interface IBaseService<TEntity> 
+public interface IBaseService<TEntity>
     where TEntity : IBaseEntity
 {
     public Task<TEntity> CreateAsync(TEntity entity);

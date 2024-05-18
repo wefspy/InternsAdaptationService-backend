@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Data.Enums;
 using InternsAdaptationService.Data.Entities.Auth;
-using InternsAdaptationService.Data.Entities.Parents;
+using InternsAdaptationService.Data.Entities.Abstracts;
 
 namespace InternsAdaptationService.Data.Entities.Internships;
 

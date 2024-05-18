@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
-using InternsAdaptationService.Data.Interfaces.IRepositories.Parents;
-using InternsAdaptationService.Infrastructure.Interfaces.IServices.Parents;
+using InternsAdaptationService.Data.Interfaces.IRepositories.Abstracts;
+using InternsAdaptationService.Infrastructure.Interfaces.IServices.Abstracts;
 
 namespace InternsAdaptationService.Infrastructure.Services.Abstracts;
 

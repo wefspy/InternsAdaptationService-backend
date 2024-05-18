@@ -1,8 +1,8 @@
 ﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
-using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Abstracts;
 using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
-using InternsAdaptationService.Infrastructure.Interfaces.IServices.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IServices.Abstracts;
 
 namespace InternsAdaptationService.Infrastructure.Managers.Abstracts;
 

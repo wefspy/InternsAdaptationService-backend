@@ -1,4 +1,4 @@
-﻿using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Parents;
+﻿using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Abstracts;
 using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
 using Microsoft.AspNetCore.Mvc;

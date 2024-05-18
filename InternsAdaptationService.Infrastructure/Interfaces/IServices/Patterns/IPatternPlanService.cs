@@ -1,5 +1,5 @@
 ﻿using InternsAdaptationService.Data.Entities.Patterns;
-using InternsAdaptationService.Infrastructure.Interfaces.IServices.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IServices.Abstracts;
 
 namespace InternsAdaptationService.Infrastructure.Interfaces.IServices.Patterns;
 
