@@ -20,8 +20,8 @@ public class PatternPlanTaskService : BaseService<PatternPlanTaskEntity>, IPatte
         await _patternPlanTaskRepository.CreateRangeAsync(entities);
     }
 
-    public Task<IEnumerable<PatternPlanTaskEntity>> GetByPlanIdAsync(Guid id)
+    public async Task<IEnumerable<PatternPlanTaskEntity>> GetByPlanIdAsync(Guid id)
     {
-        return _patternPlanTaskRepository.GetByPlanIdAsync(id);
+        return await _patternPlanTaskRepository.GetByPlanIdAsync(id);
     }
 }
