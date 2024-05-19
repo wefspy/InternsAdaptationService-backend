@@ -42,6 +42,7 @@ public static class InfrastructureLayerProvider
         services.AddTransient<IPatternPlanManager, PatternPlanManager>();
         services.AddTransient<IPatternPlanTaskManager, PatternPlanTaskManager>();
         services.AddTransient<IMentorInternManager, MentorInternManager>();
+        services.AddTransient<IInternshipTaskManager, InternshipTaskManager>();
 
         return services;
     }
@@ -55,6 +56,7 @@ public static class InfrastructureLayerProvider
         services.AddTransient<IPatternPlanMapper, PatternPlanMapper>();
         services.AddTransient<IPatternPlanTaskMapper, PatternPlanTaskMapper>();
         services.AddTransient<IMentorInternMapper, MentorInternMapper>();
+        services.AddTransient<IInternshipTaskMapper, InternshipTaskMapper>();
 
         return services;
     }
@@ -66,6 +68,7 @@ public static class InfrastructureLayerProvider
         services.AddTransient<IPatternPlanService, PatternPlanService>();
         services.AddTransient<IPatternPlanTaskService, PatternPlanTaskService>();
         services.AddTransient<IMentorInternService, MentorInternService>();
+        services.AddTransient<IInternshipTaskService, InternshipTaskService>();
 
         return services;
     }

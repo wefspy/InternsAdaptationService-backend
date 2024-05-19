@@ -33,6 +33,7 @@ public static class DataLayerProvider
         services.AddTransient<IPatternPlanRepository, PatternPlanRepository>();
         services.AddTransient<IPatternPlanTaskRepository, PatternPlanTaskRepository>();
         services.AddTransient<IMentorInternRepository, MentorInternRepository>();
+        services.AddTransient<IInternshipTaskRepository, InternshipTaskRepository>();
 
         return services;
     }

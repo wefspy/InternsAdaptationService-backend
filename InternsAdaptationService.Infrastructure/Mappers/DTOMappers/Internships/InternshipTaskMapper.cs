@@ -1,11 +1,13 @@
 ﻿using InternsAdaptationService.Data.Entities.Internships;
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Internships;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Internships;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Internships;
 using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Abstracts;
 
 namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Internships;
 
-public class InternshipTaskMapper : BaseDTOMapper<InternshipTaskEntity, InternshipTaskRequestModel, InternshipTaskResponseModel>
+public class InternshipTaskMapper : BaseDTOMapper<InternshipTaskEntity, InternshipTaskRequestModel, InternshipTaskResponseModel>,
+    IInternshipTaskMapper
 {
     protected override InternshipTaskEntity ToEntity(InternshipTaskRequestModel request)
     {
