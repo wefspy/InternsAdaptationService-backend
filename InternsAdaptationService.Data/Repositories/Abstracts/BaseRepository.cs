@@ -26,6 +26,13 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity>
         return result.Entity;
     }
 
+    public virtual async Task CreateRangeAsync(IEnumerable<TEntity> entities)
+    {
+        await _dbSet.AddRangeAsync(entities);
+
+        await _db.SaveChangesAsync();
+    }
+
     public virtual async Task UpdateAsync(TEntity entity)
     {
         _dbSet.Update(entity);
@@ -53,6 +60,13 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity>
     public virtual async Task DeleteAsync(TEntity entity)
     {
         _dbSet.Remove(entity);
+
+        await _db.SaveChangesAsync();
+    }
+
+    public async virtual Task DeleteRangeAsync(IEnumerable<TEntity> entities)
+    {
+        _dbSet.RemoveRange(entities);
 
         await _db.SaveChangesAsync();
     }

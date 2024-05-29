@@ -1,4 +1,5 @@
 ﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Abstracts;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Abstracts;
 using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
@@ -6,7 +7,7 @@ using InternsAdaptationService.Infrastructure.Interfaces.IServices.Abstracts;
 
 namespace InternsAdaptationService.Infrastructure.Managers.Abstracts;
 
-public abstract class BaseManager<TEntity, TRequestModel, TResponseModel>
+public abstract class BaseManager<TEntity, TRequestModel, TResponseModel> : IBaseManager<TRequestModel, TResponseModel>
         where TEntity : IBaseEntity
         where TRequestModel : IBaseRequestModel
         where TResponseModel : IBaseResponseModel
@@ -27,6 +28,13 @@ public abstract class BaseManager<TEntity, TRequestModel, TResponseModel>
         var created = await _service.CreateAsync(newEntity);
 
         return _mapper.ToResponse(created);
+    }
+
+    public virtual async Task CreateRangeAsync(IEnumerable<TRequestModel> requests)
+    {
+        var entities = requests.Select(request => _mapper.ToNewEntity(request));
+
+        await _service.CreateRangeAsync(entities);
     }
 
     public virtual async Task UpdateAsync(Guid id, TRequestModel request)
@@ -53,5 +61,10 @@ public abstract class BaseManager<TEntity, TRequestModel, TResponseModel>
     public virtual async Task DeleteAsync(Guid id)
     {
         await _service.DeleteAsync(id);
+    }
+
+    public async Task DeleteRangeAsync(IEnumerable<Guid> ids)
+    {
+        await _service.DeleteRangeAsync(ids);
     }
 }

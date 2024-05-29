@@ -7,6 +7,8 @@ public interface IBaseService<TEntity>
 {
     public Task<TEntity> CreateAsync(TEntity entity);
 
+    public Task CreateRangeAsync(IEnumerable<TEntity> entities);
+
     public Task UpdateAsync(TEntity entity);
 
     public Task<IEnumerable<TEntity>> GetAllAsync();
@@ -14,4 +16,6 @@ public interface IBaseService<TEntity>
     public Task<TEntity> GetByIdAsync(Guid id);
 
     public Task DeleteAsync(Guid id);
+
+    public Task DeleteRangeAsync(IEnumerable<Guid> ids);
 }

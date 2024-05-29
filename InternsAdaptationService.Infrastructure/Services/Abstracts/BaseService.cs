@@ -19,6 +19,11 @@ public abstract class BaseService<TEntity> : IBaseService<TEntity>
         return await _repository.CreateAsync(entity);
     }
 
+    public virtual async Task CreateRangeAsync(IEnumerable<TEntity> entities)
+    {
+        await _repository.CreateRangeAsync(entities);
+    }
+
     public virtual async Task UpdateAsync(TEntity entity)
     {
         await _repository.UpdateAsync(entity);
@@ -39,5 +44,13 @@ public abstract class BaseService<TEntity> : IBaseService<TEntity>
         var existEntity = await GetByIdAsync(id);
 
         await _repository.DeleteAsync(existEntity);
+    }
+
+    public virtual async Task DeleteRangeAsync(IEnumerable<Guid> ids)
+    {
+        var entities = ids
+            .Select(id => GetByIdAsync(id).Result);
+
+        await _repository.DeleteRangeAsync(entities);
     }
 }

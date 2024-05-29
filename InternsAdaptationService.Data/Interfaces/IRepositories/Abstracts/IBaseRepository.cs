@@ -1,4 +1,5 @@
-﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
+﻿using InternsAdaptationService.Data.Entities.Internships;
+using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
 
 namespace InternsAdaptationService.Data.Interfaces.IRepositories.Abstracts;
 
@@ -7,6 +8,8 @@ public interface IBaseRepository<TEntity>
 {
     public Task<TEntity> CreateAsync(TEntity request);
 
+    public Task CreateRangeAsync(IEnumerable<TEntity> entities);
+
     public Task UpdateAsync(TEntity request);
 
     public Task<IEnumerable<TEntity>> GetAllAsync();
@@ -14,4 +17,6 @@ public interface IBaseRepository<TEntity>
     public Task<TEntity> GetByIdAsync(Guid id);
 
     public Task DeleteAsync(TEntity requst);
+
+    public Task DeleteRangeAsync(IEnumerable<TEntity> entities);
 }
