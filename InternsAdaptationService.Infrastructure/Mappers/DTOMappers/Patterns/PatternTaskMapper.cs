@@ -16,11 +16,12 @@ public class PatternTaskMapper : BaseDTOMapper<PatternTaskEntity, PatternTaskReq
             MentorId = request.MentorId,
             Title = request.Title,
             Description = request.Description,
+            Reusable = request.Reusable,
         };
     }
 
     public override PatternTaskResponseModel ToResponse(PatternTaskEntity entity)
     {
-        return new PatternTaskResponseModel(entity.Id, entity.MentorId, entity.Title, entity.Description);
+        return new PatternTaskResponseModel(entity.Id, entity.MentorId, entity.Title, entity.Description, entity.Reusable);
     }
 }

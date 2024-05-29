@@ -61,6 +61,8 @@ public static class InfrastructureLayerProvider
         services.AddTransient<IPatternPlanTaskMapper, PatternPlanTaskMapper>();
         services.AddTransient<IMentorInternMapper, MentorInternMapper>();
         services.AddTransient<IInternshipTaskMapper, InternshipTaskMapper>();
+        services.AddTransient<IAssembledPatternTaskMapper, AssembledPatternTaskMapper>();
+        services.AddTransient<IAssembledPatternPlanMapper, AssembledPatternPlanMapper>();
 
         return services;
     }

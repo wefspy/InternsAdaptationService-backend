@@ -1,4 +1,5 @@
 ﻿using InternsAdaptationService.API.Controllers.Children.Abstracts;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternPlan;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
@@ -24,6 +25,21 @@ public class PatternPlanController : BaseController<PatternPlanRequestModel, Pat
         try
         {
             var result = await _patternPlanManager.GetByMentorIdAsync(id);
+
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpPost("assembled")]
+    public async Task<ActionResult<IEnumerable<PatternPlanResponseModel>>> CreateAssembled(AssembledPatternPlanRequestModel request)
+    {
+        try
+        {
+            var result = await _patternPlanManager.CreateAssembledAsync(request);
 
             return Ok(result);
         }

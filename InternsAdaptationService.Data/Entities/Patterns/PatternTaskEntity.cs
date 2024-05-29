@@ -11,5 +11,7 @@ public class PatternTaskEntity : BaseEntity
 
     public required string Description { get; set; }
 
+    public bool Reusable { get; set; }
+
     public virtual UserEntity Mentor { get; set; }
 }

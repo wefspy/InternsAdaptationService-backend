@@ -47,5 +47,4 @@ public class PatternPlanTaskController : BaseController<PatternPlanTaskRequestMo
             return BadRequest(ex.Message);
         }
     }
-
 }
