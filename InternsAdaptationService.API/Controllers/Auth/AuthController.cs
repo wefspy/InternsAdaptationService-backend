@@ -1,5 +1,5 @@
 ﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.User;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Auth;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +18,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("register")]
-    public async Task<ActionResult<AuthDataResponseModel>> Register(RegistrationRequestModel request)
+    public async Task<ActionResult<UserResponseModel>> Register(RegistrationRequestModel request)
     {
         try
         {
@@ -33,7 +33,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("signin")]
-    public async Task<ActionResult<AuthDataResponseModel>> SignIn(SignInRequestModel request)
+    public async Task<ActionResult<UserResponseModel>> SignIn(SignInRequestModel request)
     {
         try
         {

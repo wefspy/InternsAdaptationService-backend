@@ -3,9 +3,10 @@ using InternsAdaptationService.Infrastructure.Interfaces.IHandlers;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Auth;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Internships;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
-using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Auth;
+using InternsAdaptationService.Infrastructure.Interfaces.IManagers.User;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Internships;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.User;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IEnumMappers;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Auth;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Internships;
@@ -13,6 +14,7 @@ using InternsAdaptationService.Infrastructure.Interfaces.IServices.Patterns;
 using InternsAdaptationService.Infrastructure.Managers.Auth;
 using InternsAdaptationService.Infrastructure.Managers.Internships;
 using InternsAdaptationService.Infrastructure.Managers.Patterns;
+using InternsAdaptationService.Infrastructure.Managers.User;
 using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Auth;
 using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Internships;
 using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Patterns;
@@ -20,6 +22,7 @@ using InternsAdaptationService.Infrastructure.Mappers.EnumMappers;
 using InternsAdaptationService.Infrastructure.Services.Auth;
 using InternsAdaptationService.Infrastructure.Services.Internships;
 using InternsAdaptationService.Infrastructure.Services.Patterns;
+using InternsAdaptationService.Infrastructure.Services.User;
 
 namespace InternsAdaptationService.API.Extensions;
 
@@ -38,6 +41,7 @@ public static class InfrastructureLayerProvider
     private static IServiceCollection InjectManagers(this IServiceCollection services)
     {
         services.AddTransient<IAuthManager, AuthManager>();
+        services.AddTransient<IUserManager, UserManager>();
         services.AddTransient<IPatternTaskManager, PatternTaskManager>();
         services.AddTransient<IPatternPlanManager, PatternPlanManager>();
         services.AddTransient<IPatternPlanTaskManager, PatternPlanTaskManager>();
@@ -63,6 +67,7 @@ public static class InfrastructureLayerProvider
 
     private static IServiceCollection InjectServices(this IServiceCollection services)
     {
+        services.AddScoped<UserService>();
         services.AddTransient<IAuthService, AuthService>();
         services.AddTransient<IPatternTaskService, PatternTaskService>();
         services.AddTransient<IPatternPlanService, PatternPlanService>();

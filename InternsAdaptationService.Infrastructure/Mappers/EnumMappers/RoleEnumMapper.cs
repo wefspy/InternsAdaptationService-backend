@@ -10,7 +10,7 @@ public class RoleEnumMapper : IRoleEnumMapper
         var success = Enum.TryParse(role, out RoleEnum roleEnum);
 
         if (!success)
-            throw new Exception("User is assigned a role that does not exist");
+            throw new Exception("The specified role does not exist");
 
         return roleEnum;
     }

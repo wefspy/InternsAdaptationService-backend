@@ -1,6 +1,8 @@
-﻿namespace InternsAdaptationService.Infrastructure.DTO.TransferModels;
+﻿using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 
-public class UserTransferModel
+namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.User;
+
+public class UserRequestModel : IBaseRequestModel
 {
     public string Name { get; }
 
@@ -14,7 +16,7 @@ public class UserTransferModel
 
     public string? VK { get; }
 
-    public UserTransferModel(string name, string surname, string? middleName, string? desciptionProfile, string? telegram, string? vk)
+    public UserRequestModel(string name, string surname, string? middleName, string? desciptionProfile, string? telegram, string? vk)
     {
         Name = name;
         Surname = surname;

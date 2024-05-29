@@ -1,8 +1,10 @@
 ﻿using InternsAdaptationService.Data.Context;
 using InternsAdaptationService.Data.Interfaces.IRepositories.Internships;
 using InternsAdaptationService.Data.Interfaces.IRepositories.Patterns;
+using InternsAdaptationService.Data.Interfaces.IRepositories.User;
 using InternsAdaptationService.Data.Repositories.Internships;
 using InternsAdaptationService.Data.Repositories.Patterns;
+using InternsAdaptationService.Data.Repositories.User;
 using Microsoft.EntityFrameworkCore;
 
 namespace InternsAdaptationService.API.Extensions;
@@ -29,6 +31,7 @@ public static class DataLayerProvider
 
     private static IServiceCollection InjectRepositories(this IServiceCollection services)
     {
+        services.AddTransient<IUserRepository, UserRepository>();
         services.AddTransient<IPatternTaskRepository, PatternTaskRepository>();
         services.AddTransient<IPatternPlanRepository, PatternPlanRepository>();
         services.AddTransient<IPatternPlanTaskRepository, PatternPlanTaskRepository>();

@@ -1,7 +1,7 @@
 ﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Auth;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.User;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Auth;
-using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Auth;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.User;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IEnumMappers;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Auth;
 
@@ -20,11 +20,11 @@ public class AuthManager : IAuthManager
         _roleEnumMapper = roleEnumMapper;
     }
 
-    public async Task<AuthDataResponseModel> RegisterWithEmailAndPasswordAsync(RegistrationRequestModel request)
+    public async Task<UserResponseModel> RegisterWithEmailAndPasswordAsync(RegistrationRequestModel request)
     {
         var roleEnum = _roleEnumMapper.ConvertToRoleEnum(request.Role);
 
-        var user = _userMapper.ToEntity(request);
+        var user = _userMapper.ToNewEntity(request);
 
         var (createdUser, createdRole) = await _authService.RegisterWithEmailAndPasswordAsync(user, request.Password, roleEnum.ToString());
 
@@ -32,7 +32,7 @@ public class AuthManager : IAuthManager
         return response;
     }
 
-    public async Task<AuthDataResponseModel> SignInWithEmailAndPasswordAsync(SignInRequestModel request)
+    public async Task<UserResponseModel> SignInWithEmailAndPasswordAsync(SignInRequestModel request)
     {
         var (user, role) = await _authService.SigninWithEmailAndPasswordAsync(request.Email, request.Password);
 

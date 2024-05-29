@@ -1,20 +1,21 @@
 ﻿using InternsAdaptationService.Data.Entities.Auth;
 using InternsAdaptationService.Infrastructure.Interfaces.IHandlers;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Auth;
+using InternsAdaptationService.Infrastructure.Services.User;
 using Microsoft.AspNetCore.Identity;
 
 namespace InternsAdaptationService.Infrastructure.Services.Auth;
 
 public class AuthService : IAuthService
 {
-    private readonly UserManager<UserEntity> _userManager;
+    private readonly UserService _userService;
     private readonly SignInManager<UserEntity> _signinManager;
     private readonly RoleManager<RoleEntity> _roleManager;
     private readonly IErrorHandler _errorHandler;
 
-    public AuthService(UserManager<UserEntity> userManager, SignInManager<UserEntity> signinManager, RoleManager<RoleEntity> roleManager, IErrorHandler errorHandler)
+    public AuthService(UserService userManager, SignInManager<UserEntity> signinManager, RoleManager<RoleEntity> roleManager, IErrorHandler errorHandler)
     {
-        _userManager = userManager;
+        _userService = userManager;
         _signinManager = signinManager;
         _roleManager = roleManager;
         _errorHandler = errorHandler;
@@ -22,7 +23,7 @@ public class AuthService : IAuthService
 
     public async Task<(UserEntity userEntity, string userRole)> RegisterWithEmailAndPasswordAsync(UserEntity user, string password, string role)
     {
-        var createUser = await _userManager.CreateAsync(user, password);
+        var createUser = await _userService.CreateAsync(user, password);
         if (!createUser.Succeeded)
             throw new Exception(_errorHandler.IdentityExceptionsToString(createUser.Errors));
 
@@ -30,7 +31,7 @@ public class AuthService : IAuthService
         if (!roleExist)
             await _roleManager.CreateAsync(new RoleEntity() { Name = role });
 
-        var addRole = await _userManager.AddToRoleAsync(user, role);
+        var addRole = await _userService.AddToRoleAsync(user, role);
         if (!addRole.Succeeded)
             throw new Exception(_errorHandler.IdentityExceptionsToString(addRole.Errors));
 
@@ -39,11 +40,11 @@ public class AuthService : IAuthService
 
     public async Task<(UserEntity userEntity, string userRole)> SigninWithEmailAndPasswordAsync(string email, string password)
     {
-        var user = await _userManager.FindByEmailAsync(email);
+        var user = await _userService.FindByEmailAsync(email);
         if (user == null)
             throw new Exception("UserNotCreated");
 
-        var role = (await _userManager.GetRolesAsync(user!)).FirstOrDefault()!;
+        var role = (await _userService.GetRolesAsync(user!)).FirstOrDefault()!;
         if (role == null)
             throw new Exception("UserIsNotAssignedRole");
 
