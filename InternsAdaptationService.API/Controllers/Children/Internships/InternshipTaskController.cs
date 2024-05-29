@@ -31,4 +31,19 @@ public class InternshipTaskController : BaseController<InternshipTaskRequestMode
             return BadRequest(ex);
         }
     }
+
+    [HttpPost("range")]
+    public async Task<ActionResult<IEnumerable<InternshipTaskResponseModel>>> CreateRange(IEnumerable<InternshipTaskRequestModel> requests)
+    {
+        try
+        {
+            await _internshipTaskManager.CreateRangeAsync(requests);
+
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex);
+        }
+    }
 }
