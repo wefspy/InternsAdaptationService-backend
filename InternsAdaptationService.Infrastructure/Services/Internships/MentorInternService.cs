@@ -1,5 +1,6 @@
 ﻿using InternsAdaptationService.Data.Entities.Internships;
 using InternsAdaptationService.Data.Interfaces.IRepositories.Internships;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.User;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Internships;
 using InternsAdaptationService.Infrastructure.Services.Abstracts;
 
@@ -22,5 +23,19 @@ public class MentorInternService : BaseService<MentorInternEntity>, IMentorInter
     public async Task<IEnumerable<MentorInternEntity>> GetByInternIdAsync(Guid id)
     {
         return await _mentorInternRepository.GetByInternIdAsync(id);
+    }
+
+    public async Task DeleteByMentorId(Guid id)
+    {
+        var entities = await GetByMentorIdAsync(id);
+
+        await _mentorInternRepository.DeleteRangeAsync(entities);
+    }
+
+    public async Task DeleteByInternId(Guid id)
+    {
+        var entities = await GetByInternIdAsync(id);
+
+        await _mentorInternRepository.DeleteRangeAsync(entities);
     }
 }
