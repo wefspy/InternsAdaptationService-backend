@@ -15,11 +15,6 @@ public class PatternPlanTaskService : BaseService<PatternPlanTaskEntity>, IPatte
         _patternPlanTaskRepository = patternPlanTaskRepository;
     }
 
-    public async Task CreateRangeAsync(PatternPlanTaskEntity[] entities)
-    {
-        await _patternPlanTaskRepository.CreateRangeAsync(entities);
-    }
-
     public async Task<IEnumerable<PatternPlanTaskEntity>> GetByPlanIdAsync(Guid id)
     {
         return await _patternPlanTaskRepository.GetByPlanIdAsync(id);

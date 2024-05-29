@@ -44,4 +44,9 @@ public class AuthManager : IAuthManager
     {
         await _authService.SignOutAsync();
     }
+
+    public async Task ChangePasswordAsync(Guid id, string oldPassword, string newPassword)
+    {
+        await _authService.ChangePasswordAsync(id, oldPassword, newPassword);
+    }
 }

@@ -59,4 +59,11 @@ public class AuthService : IAuthService
     {
         await _signinManager.SignOutAsync();
     }
+
+    public async Task ChangePasswordAsync(Guid id, string oldPassword, string newPassword)
+    {
+        var user = await _userService.GetUserByIdAsync(id);
+
+        await _userService.ChangePasswordAsync(user, oldPassword, newPassword);
+    }
 }

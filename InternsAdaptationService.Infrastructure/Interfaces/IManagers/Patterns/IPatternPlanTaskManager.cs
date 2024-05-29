@@ -6,7 +6,5 @@ namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
 
 public interface IPatternPlanTaskManager : IBaseManager<PatternPlanTaskRequestModel, PatternPlanTaskResponseModel>
 {
-    public Task CreateRangeAsync(PatternPlanTaskRequestModel[] requests);
-
     public Task<IEnumerable<PatternPlanTaskResponseModel>> GetByPlanIdAsync(Guid id);
 }

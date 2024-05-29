@@ -9,4 +9,6 @@ public interface IAuthService
     public Task<(UserEntity userEntity, string userRole)> SigninWithEmailAndPasswordAsync(string email, string password);
 
     public Task SignOutAsync();
+
+    public Task ChangePasswordAsync(Guid id, string oldPassword, string newPassword);
 }

@@ -6,7 +6,6 @@ using InternsAdaptationService.Infrastructure.Interfaces.IManagers.User;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.User;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IEnumMappers;
 using InternsAdaptationService.Infrastructure.Services.User;
-using System.Xml.Linq;
 
 namespace InternsAdaptationService.Infrastructure.Managers.User;
 
@@ -66,5 +65,12 @@ public class UserManager : IUserManager
         var result = await _userService.UpdateAsync(user);
         if (!result.Succeeded)
             throw new Exception(_errorHandler.IdentityExceptionsToString(result.Errors));
+    }
+
+    public async Task DeleteAsync(Guid id)
+    {
+        var user = await _userService.GetUserByIdAsync(id);
+
+        await _userService.DeleteAsync(user);
     }
 }

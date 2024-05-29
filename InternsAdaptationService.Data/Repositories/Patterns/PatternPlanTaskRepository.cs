@@ -12,13 +12,6 @@ public class PatternPlanTaskRepository : BaseRepository<PatternPlanTaskEntity>, 
     {
     }
 
-    public async Task CreateRangeAsync(PatternPlanTaskEntity[] entities)
-    {
-        await _dbSet.AddRangeAsync(entities);
-
-        await _db.SaveChangesAsync();
-    }
-
     public async Task<IEnumerable<PatternPlanTaskEntity>> GetByPlanIdAsync(Guid id)
     {
         return await _dbSet

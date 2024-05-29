@@ -13,4 +13,6 @@ public interface IUserManager
     public Task<IEnumerable<UserResponseModel>> GetInRoleAsync(string roleEnum);
 
     public Task UpdateAsync(Guid id, UserRequestModel request);
+
+    public Task DeleteAsync(Guid id);
 }

@@ -21,15 +21,6 @@ public class PatternPlanTaskManager : BaseManager<PatternPlanTaskEntity, Pattern
         _patternPlanTaskMapper = patternPlanTaskMapper;
     }
 
-    public async Task CreateRangeAsync(PatternPlanTaskRequestModel[] requests)
-    {
-        var entities = requests
-            .Select(request => _patternPlanTaskMapper.ToNewEntity(request))
-            .ToArray();
-
-        await _patternPlanTaskService.CreateRangeAsync(entities);
-    }
-
     public async Task<IEnumerable<PatternPlanTaskResponseModel>> GetByPlanIdAsync(Guid id)
     {
         var entities = await _patternPlanTaskService.GetByPlanIdAsync(id);

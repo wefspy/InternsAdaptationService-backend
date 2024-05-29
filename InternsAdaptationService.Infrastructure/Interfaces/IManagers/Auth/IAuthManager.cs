@@ -10,4 +10,6 @@ public interface IAuthManager
     public Task<UserResponseModel> SignInWithEmailAndPasswordAsync(SignInRequestModel request);
 
     public Task SignOutAsync();
+
+    public Task ChangePasswordAsync(Guid id, string oldPassword, string newPassword);
 }
