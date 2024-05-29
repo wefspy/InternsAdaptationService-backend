@@ -17,6 +17,14 @@ builder.Services.InjectInfrastructureLayer();
 // Add AuthOptions
 builder.Services.InjectAuthOptions();
 
+// Add Cors
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("OpenPolicy", policy =>
+    {
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -33,6 +41,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+// Use Cors
+app.UseCors("OpenPolicy");
 
 app.UseHttpsRedirection();
 
