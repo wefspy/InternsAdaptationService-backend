@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Abstracts;
 using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
-using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternsAdaptationService.API.Controllers.Children.Abstracts;

@@ -1,6 +1,8 @@
-﻿namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Task;
+﻿using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 
-public class BodyAssembledPatternTaskRequestModel
+namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Task;
+
+public class BodyAssembledPatternTaskRequestModel : IBaseRequestModel
 {
     public Guid Id { get; } = Guid.Empty;
 

@@ -7,6 +7,4 @@ namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
 public interface IPatternPlanManager : IBaseManager<PatternPlanRequestModel, PatternPlanResponseModel>
 {
     public Task<IEnumerable<PatternPlanResponseModel>> GetByMentorIdAsync(Guid id);
-
-    public Task<AssembledPatternPlanResponseModel> CreateAssembledAsync(AssembledPatternPlanRequestModel request);
 }

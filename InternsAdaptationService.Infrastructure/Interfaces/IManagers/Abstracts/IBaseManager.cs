@@ -1,5 +1,5 @@
 ﻿using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
-using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels;
 
 namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers.Abstracts;
 

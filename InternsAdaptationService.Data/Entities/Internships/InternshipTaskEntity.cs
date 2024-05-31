@@ -15,7 +15,7 @@ public class InternshipTaskEntity : BaseEntity
 
     public required DateTime EndDate { get; set; }
 
-    public required DateTime CompletionDate { get; set; }
+    public required DateTime? CompletionDate { get; set; }
 
     public required Guid AuthorId { get; set; }
 

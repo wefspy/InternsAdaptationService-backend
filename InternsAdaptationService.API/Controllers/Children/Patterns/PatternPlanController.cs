@@ -32,19 +32,4 @@ public class PatternPlanController : BaseController<PatternPlanRequestModel, Pat
             return BadRequest(ex.Message);
         }
     }
-
-    [HttpPost("assembled")]
-    public async Task<ActionResult<IEnumerable<PatternPlanResponseModel>>> CreateAssembled(AssembledPatternPlanRequestModel request)
-    {
-        try
-        {
-            var result = await _patternPlanManager.CreateAssembledAsync(request);
-
-            return Ok(result);
-        }
-        catch (Exception ex)
-        {
-            return BadRequest(ex.Message);
-        }
-    }
 }

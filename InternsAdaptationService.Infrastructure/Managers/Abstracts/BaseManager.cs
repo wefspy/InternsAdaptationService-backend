@@ -2,7 +2,7 @@
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Abstracts;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Abstracts;
 using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
-using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Abstracts;
 
 namespace InternsAdaptationService.Infrastructure.Managers.Abstracts;

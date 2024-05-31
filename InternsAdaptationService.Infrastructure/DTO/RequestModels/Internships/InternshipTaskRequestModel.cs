@@ -14,7 +14,7 @@ public class InternshipTaskRequestModel : IBaseRequestModel
 
     public DateTime EndDate { get; }
 
-    public DateTime CompletionDate { get; }
+    public DateTime? CompletionDate { get; }
 
     public Guid AuthorId { get; }
 
@@ -22,7 +22,7 @@ public class InternshipTaskRequestModel : IBaseRequestModel
 
     public int Progress { get; }
 
-    public InternshipTaskRequestModel(Guid internId, string title, string description, DateTime startDate, DateTime endDate, DateTime completionDate, Guid authorId, string? mentorReview, int progress)
+    public InternshipTaskRequestModel(Guid internId, string title, string description, DateTime startDate, DateTime endDate, DateTime? completionDate, Guid authorId, string? mentorReview, int progress)
     {
         InternId = internId;
         Title = title;

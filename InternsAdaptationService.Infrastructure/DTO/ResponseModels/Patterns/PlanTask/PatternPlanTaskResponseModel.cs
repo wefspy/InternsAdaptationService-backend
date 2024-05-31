@@ -1,5 +1,5 @@
 ﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PlanTask;
-using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels;
 
 namespace InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.PlanTask;
 
