@@ -50,7 +50,7 @@ public class AssembledPatternPlanManager : IAssembledPatternPlanManager
         var patternPlanResponse = await _patternPlanManager.CreateAsync(patternPlanRequest);
 
         var assembledTasksRequest = request.Tasks.Select(task => _assembledPatternTaskMapper.ToRequest(task, patternPlanResponse));
-        var assembledTasksResponse = await _assembledPatternTaskManager.CreateRangeAsync(assembledTasksRequest);
+        var assembledTasksResponse = _assembledPatternTaskManager.CreateRange(assembledTasksRequest);
 
         return _assembledPatternPlanMapper.ToResponse(patternPlanResponse, assembledTasksResponse);
     }

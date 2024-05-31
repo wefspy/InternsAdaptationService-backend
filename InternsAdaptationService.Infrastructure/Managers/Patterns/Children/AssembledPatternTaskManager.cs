@@ -60,12 +60,11 @@ public class AssembledPatternTaskManager : IAssembledPatternTaskManager
         return _assembledPatternTaskMapper.ToResponse(patternPlanTaskReponse, patternTaskResponse);
     }
 
-    public async Task<IEnumerable<AssembledPatternTaskResponseModel>> CreateRangeAsync(IEnumerable<AssembledPatternTaskRequestModel> requests)
+    public IEnumerable<AssembledPatternTaskResponseModel> CreateRange(IEnumerable<AssembledPatternTaskRequestModel> requests)
     {
-        var tasks = requests.Select(request => CreateAsync(request));
-        var results = await Task.WhenAll(tasks);
+        var tasks = requests.Select(request => CreateAsync(request).Result);
 
-        return results;
+        return tasks;
     }
 
     public Task UpdateAsync(Guid id, AssembledPatternTaskRequestModel request)

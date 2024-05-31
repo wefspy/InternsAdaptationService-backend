@@ -6,5 +6,5 @@ namespace InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns.
 
 public interface IAssembledPatternTaskManager : IBaseManager<AssembledPatternTaskRequestModel, AssembledPatternTaskResponseModel>
 {
-    public new Task<IEnumerable<AssembledPatternTaskResponseModel>> CreateRangeAsync(IEnumerable<AssembledPatternTaskRequestModel> requests);
+    public IEnumerable<AssembledPatternTaskResponseModel> CreateRange(IEnumerable<AssembledPatternTaskRequestModel> requests);
 }

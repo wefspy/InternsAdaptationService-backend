@@ -33,11 +33,11 @@ public class AssembledPatternTaskController : ControllerBase
     }
 
     [HttpPost("range")]
-    public async Task<ActionResult<IEnumerable<PatternPlanTaskResponseModel>>> CreateRange(IEnumerable<AssembledPatternTaskRequestModel> requests)
+    public ActionResult<IEnumerable<PatternPlanTaskResponseModel>> CreateRange(IEnumerable<AssembledPatternTaskRequestModel> requests)
     {
         try
         {
-            var result = await _manager.CreateRangeAsync(requests);
+            var result = _manager.CreateRange(requests);
 
             return Ok(result);
         }
