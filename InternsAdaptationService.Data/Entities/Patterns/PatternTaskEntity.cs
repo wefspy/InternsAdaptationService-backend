@@ -14,4 +14,8 @@ public class PatternTaskEntity : BaseEntity
     public bool Reusable { get; set; }
 
     public virtual UserEntity Mentor { get; set; }
+
+    public virtual IEnumerable<PatternPlanTaskEntity> PlanTasks { get; set; }
+
+    public virtual IEnumerable<PatternSubtaskEntity> Subtasks { get; set; }
 }

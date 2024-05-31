@@ -8,7 +8,7 @@ public class AssembledPatternTaskResponseModel : AssembledPatternTaskRequestMode
     public Guid Id { get; }
 
     public AssembledPatternTaskResponseModel(Guid id, Guid mentorId, Guid planId, string title, string description,
-        DateTime startDate, DateTime endDate, bool reusable) 
+        int startDate, int endDate, bool reusable) 
         : base(id, mentorId, planId, title, description, startDate, endDate, reusable)
     {
         Id = id;

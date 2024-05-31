@@ -8,11 +8,11 @@ public class PatternPlanTaskRequestModel : IBaseRequestModel
 
     public Guid TaskId { get; }
 
-    public DateTime StartDate { get; }
+    public int StartDate { get; }
 
-    public DateTime EndDate { get; }
+    public int EndDate { get; }
 
-    public PatternPlanTaskRequestModel(Guid planId, Guid taskId, DateTime startDate, DateTime endDate)
+    public PatternPlanTaskRequestModel(Guid planId, Guid taskId, int startDate, int endDate)
     {
         PlanId = planId;
         TaskId = taskId;

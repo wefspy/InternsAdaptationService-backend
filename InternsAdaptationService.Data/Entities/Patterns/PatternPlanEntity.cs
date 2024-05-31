@@ -10,4 +10,6 @@ public class PatternPlanEntity : BaseEntity
     public required string Title { get; set; }
 
     public virtual UserEntity Mentor { get; set; }
+
+    public virtual IEnumerable<PatternPlanTaskEntity> PlanTasks { get; set; }
 }

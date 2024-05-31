@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using InternsAdaptationService.Data.Entities.Auth;
 using InternsAdaptationService.Data.Entities.Patterns;
 using InternsAdaptationService.Data.Entities.Internships;
+using InternsAdaptationService.Data.Configurations.Auth;
+using InternsAdaptationService.Data.Configurations.Patterns;
+using InternsAdaptationService.Data.Configurations.Internships;
 
 namespace InternsAdaptationService.Data.Context;
 
@@ -34,6 +37,17 @@ public class InternsAdaptationServiceDbContext: IdentityDbContext<UserEntity, Ro
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.ApplyConfiguration(new UserConfiguration());
+
+        modelBuilder.ApplyConfiguration(new PatternPlanConfiguration());
+        modelBuilder.ApplyConfiguration(new PatternTaskConfiguration());
+        modelBuilder.ApplyConfiguration(new PatternPlanTaskConfiguration());
+        modelBuilder.ApplyConfiguration(new PatternSubtaskConfiguration());
+
+        modelBuilder.ApplyConfiguration(new MentorInternConfiguration());
+        modelBuilder.ApplyConfiguration(new InternshipTaskConfiguration());
+        modelBuilder.ApplyConfiguration(new InternshipSubtaskConfiguration());
+
         base.OnModelCreating(modelBuilder);
     }
 }

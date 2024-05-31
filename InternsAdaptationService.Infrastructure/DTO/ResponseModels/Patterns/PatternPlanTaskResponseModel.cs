@@ -7,7 +7,7 @@ public class PatternPlanTaskResponseModel : PatternPlanTaskRequestModel, IBaseRe
 {
     public Guid Id { get; }
 
-    public PatternPlanTaskResponseModel(Guid id, Guid planId, Guid taskId, DateTime startDate, DateTime endDate) :
+    public PatternPlanTaskResponseModel(Guid id, Guid planId, Guid taskId, int startDate, int endDate) :
         base(planId, taskId, startDate, endDate)
     {
         Id = id;

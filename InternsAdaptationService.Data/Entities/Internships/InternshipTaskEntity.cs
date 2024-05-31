@@ -25,4 +25,5 @@ public class InternshipTaskEntity : BaseEntity
 
     public virtual UserEntity Intern { get; set; }
 
+    public virtual IEnumerable<InternshipSubtaskEntity> InternshipSubtasks { get; set; }
 }

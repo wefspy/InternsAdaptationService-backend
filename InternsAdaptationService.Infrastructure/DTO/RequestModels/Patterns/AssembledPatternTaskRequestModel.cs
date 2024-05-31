@@ -8,12 +8,12 @@ public class AssembledPatternTaskRequestModel : PatternTaskRequestModel, IBaseRe
 
     public Guid PlanId { get; }
 
-    public DateTime StartDate { get; }
+    public int StartDate { get; }
 
-    public DateTime EndDate { get; }
+    public int EndDate { get; }
 
     public AssembledPatternTaskRequestModel(Guid id, Guid mentorId, Guid planId, string title, string description,
-        DateTime startDate, DateTime endDate, bool reusable) : base(mentorId, title, description, reusable)
+        int startDate, int endDate, bool reusable) : base(mentorId, title, description, reusable)
     {
         Id = id;
         PlanId = planId;
