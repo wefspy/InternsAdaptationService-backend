@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 
-namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
+namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Task;
 
 public class PatternTaskRequestModel : IBaseRequestModel
 {

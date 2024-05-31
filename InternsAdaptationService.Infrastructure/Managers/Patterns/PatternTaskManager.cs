@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Data.Entities.Patterns;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Task;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.Task;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Patterns;
@@ -35,15 +35,26 @@ public class PatternTaskManager : BaseManager<PatternTaskEntity, PatternTaskRequ
 
     public async Task<AssembledPatternTaskResponseModel> CreateAssembledAsync(AssembledPatternTaskRequestModel request)
     {
-        PatternTaskResponseModel patternTaskResponse;
-        if (!request.Reusable)
+        async Task<PatternTaskResponseModel> CreateTask(AssembledPatternTaskRequestModel request)
         {
             var patternTaskRequest = _assembledPatternTaskMapper.ToPatternTaskRequestModel(request);
-            patternTaskResponse = await CreateAsync(patternTaskRequest);
+            return await CreateAsync(patternTaskRequest);
         }
-        else
-            patternTaskResponse = await GetByIdAsync(request.Id);
 
+        PatternTaskResponseModel patternTaskResponse;
+        if (!request.Reusable)
+            patternTaskResponse = await CreateTask(request);
+        else
+        {
+            try
+            {
+                patternTaskResponse = await GetByIdAsync(request.Id);
+            }
+            catch (Exception)
+            {
+                patternTaskResponse = await CreateTask(request);
+            }
+        }
 
         var patternPlanTaskRequest = _assembledPatternTaskMapper.ToPatternPlanTaskRequestModel(patternTaskResponse.Id, request);
         var patternPlanTaskReponse = await _patternPlanTaskManager.CreateAsync(patternPlanTaskRequest);

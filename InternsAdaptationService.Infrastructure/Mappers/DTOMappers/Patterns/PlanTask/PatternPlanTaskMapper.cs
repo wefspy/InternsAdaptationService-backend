@@ -1,12 +1,12 @@
 ﻿using InternsAdaptationService.Data.Entities.Patterns;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PlanTask;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.PlanTask;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
 using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Abstracts;
 
-namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Patterns;
+namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Patterns.PlanTask;
 
-public class PatternPlanTaskMapper : BaseDTOMapper<PatternPlanTaskEntity, PatternPlanTaskRequestModel, PatternPlanTaskResponseModel>, 
+public class PatternPlanTaskMapper : BaseDTOMapper<PatternPlanTaskEntity, PatternPlanTaskRequestModel, PatternPlanTaskResponseModel>,
     IPatternPlanTaskMapper
 {
     protected override PatternPlanTaskEntity ToEntity(PatternPlanTaskRequestModel request)

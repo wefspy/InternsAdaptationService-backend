@@ -1,9 +1,9 @@
-﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternPlan;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
+﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Plan;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.Plan;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.Task;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
 
-namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Patterns;
+namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Patterns.Plan;
 
 public class AssembledPatternPlanMapper : IAssembledPatternPlanMapper
 {

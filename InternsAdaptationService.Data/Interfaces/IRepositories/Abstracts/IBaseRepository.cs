@@ -14,7 +14,7 @@ public interface IBaseRepository<TEntity>
 
     public Task<IEnumerable<TEntity>> GetAllAsync();
 
-    public Task<TEntity> GetByIdAsync(Guid id);
+    public Task<TEntity>? GetByIdAsync(Guid id);
 
     public Task DeleteAsync(TEntity requst);
 

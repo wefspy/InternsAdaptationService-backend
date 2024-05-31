@@ -1,7 +1,7 @@
-﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
+﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Task;
 using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels.Parents;
 
-namespace InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
+namespace InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.Task;
 
 public class PatternTaskResponseModel : PatternTaskRequestModel, IBaseResponseModel
 {

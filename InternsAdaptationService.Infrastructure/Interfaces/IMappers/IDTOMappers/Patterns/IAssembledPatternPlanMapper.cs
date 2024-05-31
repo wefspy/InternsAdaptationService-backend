@@ -1,6 +1,6 @@
-﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternPlan;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
+﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Plan;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.Plan;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.Task;
 
 namespace InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
 

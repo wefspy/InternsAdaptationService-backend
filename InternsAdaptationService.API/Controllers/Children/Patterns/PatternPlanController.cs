@@ -1,7 +1,6 @@
 ﻿using InternsAdaptationService.API.Controllers.Children.Abstracts;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternPlan;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Plan;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.Plan;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
 using Microsoft.AspNetCore.Mvc;
 

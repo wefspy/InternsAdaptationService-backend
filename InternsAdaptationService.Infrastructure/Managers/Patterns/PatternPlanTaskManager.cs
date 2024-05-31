@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Data.Entities.Patterns;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PlanTask;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.PlanTask;
 using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
 using InternsAdaptationService.Infrastructure.Interfaces.IServices.Patterns;

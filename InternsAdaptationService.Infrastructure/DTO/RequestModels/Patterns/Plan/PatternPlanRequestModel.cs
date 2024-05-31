@@ -1,6 +1,6 @@
 ﻿using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
 
-namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.PatternPlan;
+namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Plan;
 
 public class PatternPlanRequestModel : IBaseRequestModel
 {
