@@ -12,4 +12,6 @@ public interface IAuthManager
     public Task SignOutAsync();
 
     public Task ChangePasswordAsync(Guid id, string oldPassword, string newPassword);
+
+    public Task SeedAdmin();
 }

@@ -67,4 +67,19 @@ public class AuthController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+
+    [HttpPost("seed/admin")]
+    public async Task<IActionResult> SeedAdmin()
+    {
+        try
+        {
+            await _authManager.SeedAdmin();
+
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 }

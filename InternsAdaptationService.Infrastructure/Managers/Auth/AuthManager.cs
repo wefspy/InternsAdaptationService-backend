@@ -20,6 +20,17 @@ public class AuthManager : IAuthManager
         _roleEnumMapper = roleEnumMapper;
     }
 
+    public async Task SeedAdmin()
+    {
+        var admin = new RegistrationRequestModel("admin@example.com", "Pas123456", "admin", "admin", "admin", "Admin");
+
+        var roleEnum = _roleEnumMapper.ConvertToRoleEnum(admin.Role);
+
+        var user = _userMapper.ToNewEntity(admin);
+
+        await _authService.RegisterWithEmailAndPasswordAsync(user, admin.Password, roleEnum.ToString());
+    }
+
     public async Task<UserResponseModel> RegisterWithEmailAndPasswordAsync(RegistrationRequestModel request)
     {
         var roleEnum = _roleEnumMapper.ConvertToRoleEnum(request.Role);
