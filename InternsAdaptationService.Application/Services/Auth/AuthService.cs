@@ -64,6 +64,8 @@ public class AuthService : IAuthService
     {
         var user = await _userService.GetUserByIdAsync(id);
 
-        await _userService.ChangePasswordAsync(user, oldPassword, newPassword);
+        var result = await _userService.ChangePasswordAsync(user, oldPassword, newPassword);
+        if (!result.Succeeded)
+            throw new Exception(_errorHandler.IdentityExceptionsToString(result.Errors));
     }
 }
