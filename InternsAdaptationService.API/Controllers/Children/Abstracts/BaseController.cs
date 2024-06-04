@@ -1,14 +1,16 @@
-﻿using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Abstracts;
-using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
-using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels;
+﻿using InternsAdaptationService.Application.Interfaces.IManagers.Abstracts;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IRequestModels;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IResponseModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternsAdaptationService.API.Controllers.Children.Abstracts;
 
-public abstract class BaseController<TRequestModel, TResponseModel, TManager> : ControllerBase
-    where TRequestModel : IBaseRequestModel
-    where TResponseModel : IBaseResponseModel
-    where TManager : IBaseManager<TRequestModel, TResponseModel>
+public abstract class BaseController<TRequestModel, TIRequestModel, TResponseModel, TIResponseModel, TManager> : ControllerBase
+    where TIRequestModel : IBaseRequestModel
+    where TRequestModel : TIRequestModel
+    where TIResponseModel : IBaseResponseModel
+    where TResponseModel : TIResponseModel
+    where TManager : IBaseManager<TIRequestModel, TIResponseModel>
 {
     private readonly TManager _manager;
 

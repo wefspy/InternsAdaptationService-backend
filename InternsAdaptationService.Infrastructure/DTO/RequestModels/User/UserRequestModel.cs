@@ -1,8 +1,8 @@
-﻿using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
+﻿using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IRequestModels.User;
 
 namespace InternsAdaptationService.Infrastructure.DTO.RequestModels.User;
 
-public class UserRequestModel : IBaseRequestModel
+public class UserRequestModel : IUserRequestModel
 {
     public string Name { get; }
 

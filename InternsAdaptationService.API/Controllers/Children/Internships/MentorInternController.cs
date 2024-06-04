@@ -1,15 +1,18 @@
 ﻿using InternsAdaptationService.API.Controllers.Children.Abstracts;
+using InternsAdaptationService.Application.Interfaces.IManagers.Internships;
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Internships;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Internships;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.User;
-using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Internships;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IRequestModels.Internships;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IResponseModels.Internships;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternsAdaptationService.API.Controllers.Children.Internships;
 
 [Route("api/internship/mentorIntern")]
 [ApiController]
-public class MentorInternController : BaseController<MentorInternRequestModel, MentorInternResponseModel, IMentorInternManager>
+public class MentorInternController : 
+    BaseController<MentorInternRequestModel, IMentorInternRequestModel, MentorInternResponseModel, IMentorInternResponseModel, IMentorInternManager>
 {
     private readonly IMentorInternManager _mentorInternManager;
 

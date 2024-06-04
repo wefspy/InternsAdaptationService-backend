@@ -10,17 +10,4 @@
     <ProjectReference Include="..\InternsAdaptationService.Data\InternsAdaptationService.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DTO\EntityModels\Patterns\Plan\" />
-    <Folder Include="DTO\EntityModels\Patterns\PlanTask\" />
-    <Folder Include="DTO\EntityModels\Patterns\Task\" />
-    <Folder Include="DTO\EntityModels\User\" />
-    <Folder Include="DTO\EntityModels\Internships\" />
-    <Folder Include="DTO\EntityModels\" />
-  </ItemGroup>
-
 </Project>

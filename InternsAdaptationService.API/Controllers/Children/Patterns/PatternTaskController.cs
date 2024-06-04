@@ -1,14 +1,17 @@
 ﻿using InternsAdaptationService.API.Controllers.Children.Abstracts;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Task;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.Task;
-using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
+using InternsAdaptationService.Application.Interfaces.IManagers.Patterns;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IRequestModels.Patterns;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IResponseModels.Patterns;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternsAdaptationService.API.Controllers.Children.Patterns;
 
 [Route("api/pattern/task")]
 [ApiController]
-public class PatternTaskController : BaseController<PatternTaskRequestModel, PatternTaskResponseModel, IPatternTaskManager>
+public class PatternTaskController : 
+    BaseController<PatternTaskRequestModel, IPatternTaskRequestModel, PatternTaskResponseModel, IPatternTaskResponseModel, IPatternTaskManager>
 {
     private readonly IPatternTaskManager _patternTaskManager;
 

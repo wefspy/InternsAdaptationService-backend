@@ -1,7 +1,7 @@
 ﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IRequestModels;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IResponseModels;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Abstracts;
-using InternsAdaptationService.Infrastructure.Interfaces.IRequestModels;
-using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels;
 
 namespace InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Abstracts;
 

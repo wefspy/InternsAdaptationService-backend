@@ -1,6 +1,6 @@
-﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.User;
+﻿using InternsAdaptationService.Application.Interfaces.IManagers.User;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.User;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.User;
-using InternsAdaptationService.Infrastructure.Interfaces.IManagers.User;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternsAdaptationService.API.Controllers.Children.User;

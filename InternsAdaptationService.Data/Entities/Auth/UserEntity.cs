@@ -6,6 +6,8 @@ namespace InternsAdaptationService.Data.Entities.Auth;
 
 public class UserEntity : IdentityUser<Guid>
 {
+    public required string Role { get; set; }
+
     public required string Name { get; set; }
 
     public required string Surname { get; set; }

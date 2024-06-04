@@ -1,6 +1,6 @@
-﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
+﻿using InternsAdaptationService.Application.Interfaces.IManagers.Auth;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.User;
-using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Auth;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -59,21 +59,6 @@ public class AuthController : ControllerBase
         try
         {
             await _authManager.ChangePasswordAsync(id, oldPassword, newPassword);
-
-            return Ok();
-        }
-        catch (Exception ex)
-        {
-            return BadRequest(ex.Message);
-        }
-    }
-
-    [HttpPost("seed/admin")]
-    public async Task<IActionResult> SeedAdmin()
-    {
-        try
-        {
-            await _authManager.SeedAdmin();
 
             return Ok();
         }

@@ -19,4 +19,6 @@ public interface IBaseRepository<TEntity>
     public Task DeleteAsync(TEntity requst);
 
     public Task DeleteRangeAsync(IEnumerable<TEntity> entities);
+
+    public Task SaveAsync();
 }

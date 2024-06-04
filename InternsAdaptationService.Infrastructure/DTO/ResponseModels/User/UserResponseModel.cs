@@ -1,9 +1,9 @@
 ﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.User;
-using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IResponseModels.User;
 
 namespace InternsAdaptationService.Infrastructure.DTO.ResponseModels.User;
 
-public class UserResponseModel : UserRequestModel, IBaseResponseModel
+public class UserResponseModel : UserRequestModel, IUserResponseModel
 {
     public Guid Id { get; }
 
@@ -11,7 +11,7 @@ public class UserResponseModel : UserRequestModel, IBaseResponseModel
 
     public string Email { get; }
 
-    public UserResponseModel(Guid id, string role, string email, string name, string surname, string middleName, string desciptionProfile, string telegram, string vk) :
+    public UserResponseModel(Guid id, string role, string email, string name, string surname, string? middleName, string? desciptionProfile, string? telegram, string? vk) :
         base(name, surname, middleName, desciptionProfile, telegram, vk)
     {
         Id = id;

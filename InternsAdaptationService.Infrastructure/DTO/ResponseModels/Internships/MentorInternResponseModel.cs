@@ -1,9 +1,9 @@
 ﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Internships;
-using InternsAdaptationService.Infrastructure.Interfaces.IResponseModels;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IResponseModels.Internships;
 
 namespace InternsAdaptationService.Infrastructure.DTO.ResponseModels.Internships;
 
-public class MentorInternResponseModel : MentorInternRequestModel, IBaseResponseModel
+public class MentorInternResponseModel : MentorInternRequestModel, IMentorInternResponseModel
 {
     public Guid Id { get; }
 

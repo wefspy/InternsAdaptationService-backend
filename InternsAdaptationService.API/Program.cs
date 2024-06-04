@@ -14,6 +14,9 @@ builder.Services.InjectDataLayer(postgresDbConnection);
 // Add InfrastructureLayer
 builder.Services.InjectInfrastructureLayer();
 
+// Add ApplicationLayer
+builder.Services.InjectApplicationLayer();
+
 // Add AuthOptions
 builder.Services.InjectAuthOptions();
 

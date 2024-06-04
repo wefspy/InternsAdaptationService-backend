@@ -5,4 +5,6 @@ namespace InternsAdaptationService.Infrastructure.Interfaces.IMappers.IEnumMappe
 public interface IRoleEnumMapper
 {
     public RoleEnum ConvertToRoleEnum(string role);
+
+    public bool RoleExist(string role);
 }

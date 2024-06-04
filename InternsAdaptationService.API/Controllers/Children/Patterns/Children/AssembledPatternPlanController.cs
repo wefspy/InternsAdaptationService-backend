@@ -1,6 +1,6 @@
-﻿using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Plan;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.Plan;
-using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns.Children;
+﻿using InternsAdaptationService.Application.Interfaces.IManagers.Patterns.Children;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Children;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.Children;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternsAdaptationService.API.Controllers.Children.Patterns.Children;
@@ -27,7 +27,7 @@ public class AssembledPatternPlanController : ControllerBase
         }
         catch (Exception ex)
         {
-            return BadRequest(ex.Message);
+            return BadRequest(ex);
         }
     }
 

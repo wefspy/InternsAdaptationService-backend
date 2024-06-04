@@ -1,14 +1,17 @@
 ﻿using InternsAdaptationService.API.Controllers.Children.Abstracts;
+using InternsAdaptationService.Application.Interfaces.IManagers.Internships;
 using InternsAdaptationService.Infrastructure.DTO.RequestModels.Internships;
 using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Internships;
-using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Internships;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IRequestModels.Internships;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IResponseModels.Internships;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternsAdaptationService.API.Controllers.Children.Internships;
 
 [Route("api/internship/task")]
 [ApiController]
-public class InternshipTaskController : BaseController<InternshipTaskRequestModel, InternshipTaskResponseModel, IInternshipTaskManager>
+public class InternshipTaskController : 
+    BaseController<InternshipTaskRequestModel, IInternshipTaskRequestModel, InternshipTaskResponseModel, IInternshipTaskResponseModel, IInternshipTaskManager>
 {
     private readonly IInternshipTaskManager _internshipTaskManager;
 

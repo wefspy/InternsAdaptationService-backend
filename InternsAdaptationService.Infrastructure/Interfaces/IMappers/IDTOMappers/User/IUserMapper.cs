@@ -1,15 +1,12 @@
 ﻿using InternsAdaptationService.Data.Entities.Auth;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.Auth;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.User;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.User;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IRequestModels.Auth;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IResponseModels.User;
 
 namespace InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.User;
 
 public interface IUserMapper
 {
-    public UserResponseModel ToResponse(UserEntity user, string role);
+    public IUserResponseModel ToResponse(UserEntity user);
 
-    public UserEntity ToNewEntity(RegistrationRequestModel requestModel);
-
-    public UserEntity ToExistEntity(Guid id, UserRequestModel request);
+    public UserEntity ToNewEntity(IRegistrationRequestModel requestModel);
 }

@@ -1,14 +1,17 @@
 ﻿using InternsAdaptationService.API.Controllers.Children.Abstracts;
-using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns.Plan;
-using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns.Plan;
-using InternsAdaptationService.Infrastructure.Interfaces.IManagers.Patterns;
+using InternsAdaptationService.Application.Interfaces.IManagers.Patterns;
+using InternsAdaptationService.Infrastructure.DTO.RequestModels.Patterns;
+using InternsAdaptationService.Infrastructure.DTO.ResponseModels.Patterns;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IRequestModels.Patterns;
+using InternsAdaptationService.Infrastructure.Interfaces.IDTO.IResponseModels.Patterns;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternsAdaptationService.API.Controllers.Children.Patterns;
 
 [Route("api/pattern/plan")]
 [ApiController]
-public class PatternPlanController : BaseController<PatternPlanRequestModel, PatternPlanResponseModel, IPatternPlanManager>
+public class PatternPlanController : 
+    BaseController<PatternPlanRequestModel, IPatternPlanRequestModel, PatternPlanResponseModel, IPatternPlanResponseModel, IPatternPlanManager>
 {
     private readonly IPatternPlanManager _patternPlanManager;
 

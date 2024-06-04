@@ -7,11 +7,16 @@ public class RoleEnumMapper : IRoleEnumMapper
 {
     public RoleEnum ConvertToRoleEnum(string role)
     {
-        var success = Enum.TryParse(role, out RoleEnum roleEnum);
+        var roleExist = RoleExist(role);
 
-        if (!success)
+        if (!roleExist)
             throw new Exception("The specified role does not exist");
 
-        return roleEnum;
+        return Enum.Parse<RoleEnum>(role);
+    }
+
+    public bool RoleExist(string role)
+    {
+        return Enum.IsDefined(typeof(RoleEnum), role);
     }
 }

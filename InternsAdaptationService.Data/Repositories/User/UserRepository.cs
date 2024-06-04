@@ -25,4 +25,11 @@ public class UserRepository : IUserRepository
 
         return entity;
     }
+
+    public virtual async Task<IEnumerable<UserEntity>> GetAllAsync()
+    {
+        return await _dbSet
+            .AsNoTracking()
+            .ToListAsync();
+    }
 }
