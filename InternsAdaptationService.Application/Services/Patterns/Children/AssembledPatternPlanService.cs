@@ -52,13 +52,13 @@ public class AssembledPatternPlanService : IAssembledPatternPlanService
     public async Task LoadAsync(Guid id, Guid internId)
     {
         var planTasks = await _patternPlanTaskService.GetByPlanIdAsync(id);
-        var tasks = planTasks.Select(async planTask =>
+        var internshipTaskRequestModels = planTasks.Select(planTask =>
         {
-            var task = await _patternTaskService.GetByIdAsync(planTask.TaskId);
+            var task = _patternTaskService.GetByIdAsync(planTask.TaskId).Result;
             return _internshipTaskMapper.ToNewEntity(internId, planTask, task);
         });
 
-        var internshipTaskRequestModels = await Task.WhenAll(tasks);
+        //var internshipTaskRequestModels = await Task.WhenAll(tasks);
         await _internshipTaskService.CreateRangeAsync(internshipTaskRequestModels);
     }
 
