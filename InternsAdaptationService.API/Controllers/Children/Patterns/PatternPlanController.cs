@@ -10,7 +10,7 @@ namespace InternsAdaptationService.API.Controllers.Children.Patterns;
 
 [Route("api/pattern/plan")]
 [ApiController]
-public class PatternPlanController : 
+public class PatternPlanController :
     BaseController<PatternPlanRequestModel, IPatternPlanRequestModel, PatternPlanResponseModel, IPatternPlanResponseModel, IPatternPlanManager>
 {
     private readonly IPatternPlanManager _patternPlanManager;
@@ -27,6 +27,21 @@ public class PatternPlanController :
         try
         {
             var result = await _patternPlanManager.GetByMentorIdAsync(id);
+
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpGet("{role}")]
+    public async Task<ActionResult<IEnumerable<PatternPlanResponseModel>>> GetFromRole(string role)
+    {
+        try
+        {
+            var result = await _patternPlanManager.GetFromRoleAsync(role);
 
             return Ok(result);
         }

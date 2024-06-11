@@ -6,4 +6,6 @@ namespace InternsAdaptationService.Data.Interfaces.IRepositories.Patterns;
 public interface IPatternPlanRepository : IBaseRepository<PatternPlanEntity>
 {
     public Task<IEnumerable<PatternPlanEntity>> GetByMentorIdAsync(Guid id);
+
+    public Task<IEnumerable<PatternPlanEntity>> GetFromRoleAsync(string role);
 }

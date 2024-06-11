@@ -19,4 +19,9 @@ public class PatternPlanService : BaseService<PatternPlanEntity>, IPatternPlanSe
     {
         return await _patternPlanRepository.GetByMentorIdAsync(id);
     }
+
+    public async Task<IEnumerable<PatternPlanEntity>> GetFromRoleAsync(string role)
+    {
+        return await _patternPlanRepository.GetFromRoleAsync(role);
+    }
 }

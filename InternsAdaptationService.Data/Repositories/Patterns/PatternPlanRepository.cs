@@ -19,4 +19,12 @@ public class PatternPlanRepository : BaseRepository<PatternPlanEntity>, IPattern
             .AsNoTracking()
             .ToArrayAsync();
     }
+
+    public async Task<IEnumerable<PatternPlanEntity>> GetFromRoleAsync(string role)
+    {
+        return await _dbSet
+            .Where(entity => entity.Mentor.Role == role)
+            .AsNoTracking()
+            .ToArrayAsync();
+    }
 }
