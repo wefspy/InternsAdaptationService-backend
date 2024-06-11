@@ -8,5 +8,5 @@ namespace InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMapper
 
 public interface IInternshipTaskMapper : IBaseDTOMapper<InternshipTaskEntity, IInternshipTaskRequestModel, IInternshipTaskResponseModel>
 {
-    public InternshipTaskEntity ToNewEntity(Guid internId, PatternPlanTaskEntity planTask, PatternTaskEntity task);
+    public InternshipTaskEntity ToNewEntity(Guid internId, DateTime startDateInternship, PatternPlanTaskEntity planTask, PatternTaskEntity task);
 }

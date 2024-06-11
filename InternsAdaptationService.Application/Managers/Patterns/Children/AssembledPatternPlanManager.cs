@@ -23,9 +23,9 @@ public class AssembledPatternPlanManager : IAssembledPatternPlanManager
         return result;
     }
 
-    public async Task LoadAsync(Guid id, Guid internId)
+    public async Task LoadAsync(Guid id, Guid internId, DateTime startDateInternship)
     {
-        await _assembledPatternPlanService.LoadAsync(id, internId);
+        await _assembledPatternPlanService.LoadAsync(id, internId, startDateInternship);
 
         await _assembledPatternPlanService.SaveAsync();
     }

@@ -7,7 +7,7 @@ public interface IAssembledPatternPlanService
 {
     public Task<IAssembledPatternPlanResponseModel> CreateAsync(IAssembledPatternPlanRequestModel request);
 
-    public Task LoadAsync(Guid id, Guid internId);
+    public Task LoadAsync(Guid id, Guid internId, DateTime startDateInternship);
 
     public Task SaveAsync();
 }

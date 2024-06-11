@@ -32,11 +32,11 @@ public class AssembledPatternPlanController : ControllerBase
     }
 
     [HttpPost("{id:Guid}")]
-    public async Task<IActionResult> Load(Guid id, Guid internId)
+    public async Task<IActionResult> Load(Guid id, Guid internId, DateTime startDateInternship)
     {
         try
         {
-            await _manager.LoadAsync(id, internId);
+            await _manager.LoadAsync(id, internId, startDateInternship);
 
             return Ok();
         }
