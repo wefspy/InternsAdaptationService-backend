@@ -1,4 +1,5 @@
 using InternsAdaptationService.API.Extensions;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -49,6 +50,22 @@ app.UseAuthorization();
 app.UseCors("OpenPolicy");
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
+
+
+var uploadsFolder = Path.Combine(app.Environment.ContentRootPath, "uploads");
+if (!Directory.Exists(uploadsFolder))
+{
+    Directory.CreateDirectory(uploadsFolder);
+}
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(uploadsFolder),
+    RequestPath = "/uploads"
+});
+
 
 app.UseAuthorization();
 

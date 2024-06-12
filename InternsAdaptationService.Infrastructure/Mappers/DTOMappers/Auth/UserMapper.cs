@@ -10,7 +10,7 @@ public class UserMapper : IUserMapper
 {
     public IUserResponseModel ToResponse(UserEntity user)
     {
-        return new UserResponseModel(user.Id, user.Role, user.Email!, user.Name, user.Surname, user.MiddleName, user.DesciptionProfile,
+        return new UserResponseModel(user.Id, user.Role, user.Email!, user.Name, user.Surname, user.MiddleName, user.Url, user.DesciptionProfile,
             user.Telegram, user.VK);
     }
 

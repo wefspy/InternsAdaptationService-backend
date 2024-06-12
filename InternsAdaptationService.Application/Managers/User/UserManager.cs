@@ -63,6 +63,17 @@ public class UserManager : IUserManager
             throw new Exception(_errorHandler.IdentityExceptionsToString(result.Errors));
     }
 
+    public async Task UpdateUrlAsync(Guid id, string url)
+    {
+        var user = await _userService.GetUserByIdAsync(id);
+
+        user.Url = url;
+
+        var result = await _userService.UpdateAsync(user);
+        if (!result.Succeeded)
+            throw new Exception(_errorHandler.IdentityExceptionsToString(result.Errors));
+    }
+
     public async Task DeleteAsync(Guid id)
     {
         var user = await _userService.GetUserByIdAsync(id);

@@ -15,5 +15,7 @@ public interface IUserManager
 
     public Task UpdateAsync(Guid id, IUserRequestModel request);
 
+    public Task UpdateUrlAsync(Guid id, string url);
+
     public Task DeleteAsync(Guid id);
 }

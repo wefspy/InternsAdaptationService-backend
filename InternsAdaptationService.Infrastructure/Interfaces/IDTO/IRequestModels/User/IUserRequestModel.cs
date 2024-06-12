@@ -8,6 +8,8 @@ public interface IUserRequestModel : IBaseRequestModel
 
     public string? MiddleName { get; }
 
+    public string? Url { get; }
+
     public string? DesciptionProfile { get; }
 
     public string? Telegram { get; }

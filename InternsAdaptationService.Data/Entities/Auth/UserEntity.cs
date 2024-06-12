@@ -16,6 +16,8 @@ public class UserEntity : IdentityUser<Guid>
 
     public string? DesciptionProfile { get; set; }
 
+    public string? Url { get; set; }
+
     public string? Telegram { get; set; }
 
     public string? VK { get; set; }
