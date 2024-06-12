@@ -1,7 +1,9 @@
 ﻿using InternsAdaptationService.Data.Context;
+using InternsAdaptationService.Data.Interfaces.IRepositories.Files;
 using InternsAdaptationService.Data.Interfaces.IRepositories.Internships;
 using InternsAdaptationService.Data.Interfaces.IRepositories.Patterns;
 using InternsAdaptationService.Data.Interfaces.IRepositories.User;
+using InternsAdaptationService.Data.Repositories.Files;
 using InternsAdaptationService.Data.Repositories.Internships;
 using InternsAdaptationService.Data.Repositories.Patterns;
 using InternsAdaptationService.Data.Repositories.User;
@@ -37,6 +39,7 @@ public static class DataLayerProvider
         services.AddTransient<IPatternPlanTaskRepository, PatternPlanTaskRepository>();
         services.AddTransient<IMentorInternRepository, MentorInternRepository>();
         services.AddTransient<IInternshipTaskRepository, InternshipTaskRepository>();
+        services.AddTransient<IFileRepository, FileRepository>();
 
         return services;
     }

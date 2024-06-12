@@ -8,6 +8,7 @@ using InternsAdaptationService.Data.Entities.Internships;
 using InternsAdaptationService.Data.Configurations.Auth;
 using InternsAdaptationService.Data.Configurations.Patterns;
 using InternsAdaptationService.Data.Configurations.Internships;
+using InternsAdaptationService.Data.Entities.Files;
 
 namespace InternsAdaptationService.Data.Context;
 
@@ -23,6 +24,7 @@ public class InternsAdaptationServiceDbContext: IdentityDbContext<UserEntity, Ro
     public DbSet<InternshipTaskEntity> InternshipTasks { get; set; }
     public DbSet<InternshipSubtaskEntity> InternshipSubtasks { get; set; }
 
+    public DbSet<FileEntity> Files { get; set; }
 
 
     public InternsAdaptationServiceDbContext(DbContextOptions<InternsAdaptationServiceDbContext> options): base(options)

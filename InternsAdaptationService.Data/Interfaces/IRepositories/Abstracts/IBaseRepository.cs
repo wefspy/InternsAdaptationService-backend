@@ -1,5 +1,4 @@
-﻿using InternsAdaptationService.Data.Entities.Internships;
-using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
+﻿using InternsAdaptationService.Data.Interfaces.IEntities.Parents;
 
 namespace InternsAdaptationService.Data.Interfaces.IRepositories.Abstracts;
 

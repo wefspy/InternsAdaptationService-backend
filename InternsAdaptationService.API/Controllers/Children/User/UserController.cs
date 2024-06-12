@@ -116,7 +116,7 @@ public class UserController : ControllerBase
         {
             await file.CopyToAsync(stream);
         }
-
+        
         var fileUrl = $"{Request.Scheme}://{Request.Host}/uploads/{id}/{filename}";
 
         await _userManager.UpdateUrlAsync(id, fileUrl);

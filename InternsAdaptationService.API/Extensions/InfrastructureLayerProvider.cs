@@ -1,9 +1,11 @@
-﻿using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Internships;
+﻿using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Files;
+using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Internships;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.Patterns.Children;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IDTOMappers.User;
 using InternsAdaptationService.Infrastructure.Interfaces.IMappers.IEnumMappers;
 using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Auth;
+using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Files;
 using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Internships;
 using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Patterns;
 using InternsAdaptationService.Infrastructure.Mappers.DTOMappers.Patterns.Children;
@@ -32,6 +34,7 @@ public static class InfrastructureLayerProvider
         services.AddTransient<IInternshipTaskMapper, InternshipTaskMapper>();
         services.AddTransient<IAssembledPatternTaskMapper, AssembledPatternTaskMapper>();
         services.AddTransient<IAssembledPatternPlanMapper, AssembledPatternPlanMapper>();
+        services.AddTransient<IFileMapper, FileMapper>();
 
         return services;
     }

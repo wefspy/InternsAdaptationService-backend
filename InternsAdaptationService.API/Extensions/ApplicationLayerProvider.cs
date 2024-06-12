@@ -1,20 +1,24 @@
 ﻿using InternsAdaptationService.Application.Handlers;
 using InternsAdaptationService.Application.Interfaces.IHandlers;
 using InternsAdaptationService.Application.Interfaces.IManagers.Auth;
+using InternsAdaptationService.Application.Interfaces.IManagers.Files;
 using InternsAdaptationService.Application.Interfaces.IManagers.Internships;
 using InternsAdaptationService.Application.Interfaces.IManagers.Patterns;
 using InternsAdaptationService.Application.Interfaces.IManagers.Patterns.Children;
 using InternsAdaptationService.Application.Interfaces.IManagers.User;
 using InternsAdaptationService.Application.Interfaces.IServices.Auth;
+using InternsAdaptationService.Application.Interfaces.IServices.Files;
 using InternsAdaptationService.Application.Interfaces.IServices.Internships;
 using InternsAdaptationService.Application.Interfaces.IServices.Patterns;
 using InternsAdaptationService.Application.Interfaces.IServices.Patterns.Children;
 using InternsAdaptationService.Application.Managers.Auth;
+using InternsAdaptationService.Application.Managers.Files;
 using InternsAdaptationService.Application.Managers.Internships;
 using InternsAdaptationService.Application.Managers.Patterns;
 using InternsAdaptationService.Application.Managers.Patterns.Children;
 using InternsAdaptationService.Application.Managers.User;
 using InternsAdaptationService.Application.Services.Auth;
+using InternsAdaptationService.Application.Services.Files;
 using InternsAdaptationService.Application.Services.Internships;
 using InternsAdaptationService.Application.Services.Patterns;
 using InternsAdaptationService.Application.Services.Patterns.Children;
@@ -45,6 +49,7 @@ public static class ApplicationLayerProvider
         services.AddTransient<IInternshipTaskManager, InternshipTaskManager>();
         services.AddTransient<IAssembledPatternTaskManager, AssembledPatternTaskManager>();
         services.AddTransient<IAssembledPatternPlanManager, AssembledPatternPlanManager>();
+        services.AddTransient<IFileManager, FileManager>();
 
         return services;
     }
@@ -60,6 +65,7 @@ public static class ApplicationLayerProvider
         services.AddTransient<IInternshipTaskService, InternshipTaskService>();
         services.AddTransient<IAssembledPatternPlanService, AssembledPatternPlanService>();
         services.AddTransient<IAssembledPatternTaskService, AssembledPatternTaskService>();
+        services.AddTransient<IFileService, FileService>();
 
         return services;
     }
